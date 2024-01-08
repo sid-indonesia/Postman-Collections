@@ -6878,7 +6878,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"268607006\",\n        \"display\": \"Hypertension risk level\"\n      }\n    ]\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //   \"code\": \"OI000070\",\n        //   \"display\": \"Tekanan Darah Optimal\"\n        // },\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"2004005\",\n          \"display\": \"Normal blood pressure\"\n        },\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //   \"code\": \"OI000073\",\n        //   \"display\": \"Tekanan Darah Normal Tinggi\"\n        // },\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"827069000\",\n          \"display\": \"Stage 1 hypertension\"\n        },\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"827068008\",\n          \"display\": \"Stage 1 hypertension\"\n        },\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //   \"code\": \"OI000071\",\n        //   \"display\": \"Hipertensi Derajat 3\"\n        // },\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"56218007\",\n          \"display\": \"Systolic hypertension\"\n        }\n      ]\n    }\n  ],\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\"\n}",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"268607006\",\n        \"display\": \"Hypertension risk level\"\n      }\n    ]\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //   \"code\": \"OI000070\",\n        //   \"display\": \"Tekanan Darah Optimal\"\n        // },\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"2004005\",\n          \"display\": \"Normal blood pressure\"\n        },\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //   \"code\": \"OI000073\",\n        //   \"display\": \"Tekanan Darah Normal Tinggi\"\n        // },\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"827069000\",\n          \"display\": \"Stage 1 hypertension\"\n        },\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"827068008\",\n          \"display\": \"Stage 1 hypertension\"\n        },\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //   \"code\": \"OI000071\",\n        //   \"display\": \"Hipertensi Derajat 3\"\n        // },\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"56218007\",\n          \"display\": \"Systolic hypertension\"\n        }\n      ]\n    }\n  ],\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7101,13 +7101,13 @@
 					"name": "Pemeriksaan Antropometri",
 					"item": [
 						{
-							"name": "Observation - Indeks Massa Tubuh (IMT)",
+							"name": "Observation - Berat Badan",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n                    \"code\": \"vital-signs\",\n                    \"display\": \"Vital Signs\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"system\": \"http://loinc.org\",\n                \"code\": \"39156-5\",\n                \"display\": \"Body mass index (BMI) [Ratio]\"\n            }\n        ]\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"subject\": {\n        \"reference\": \"Patient/100000030015\",\n        \"display\": \"Diana Smith\"\n    },\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"valueQuantity\": {\n        \"value\": 17.777,\n        \"unit\": \"kg/m^2\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"code\": \"kg/m2\"\n    }\n}",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"29463-7\",\n        \"display\": \"Body weight\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 66.777,\n    \"unit\": \"kg\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"kg\"\n  }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7126,13 +7126,13 @@
 							},
 							"response": [
 								{
-									"name": "Observation - Tekanan Darah Diastolik",
+									"name": "Observation - Berat Badan",
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n                    \"code\": \"vital-signs\",\n                    \"display\": \"Vital Signs\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"system\": \"http://loinc.org\",\n                \"code\": \"8462-4\",\n                \"display\": \"Diastolic blood pressure\"\n            }\n        ]\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"subject\": {\n        \"reference\": \"Patient/100000030015\",\n        \"display\": \"Diana Smith\"\n    },\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"valueQuantity\": {\n        \"value\": 90.3,\n        \"unit\": \"mmHg\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"code\": \"mm[Hg]\"\n    }\n}",
+											"raw": "{\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n                    \"code\": \"vital-signs\",\n                    \"display\": \"Vital Signs\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"system\": \"http://loinc.org\",\n                \"code\": \"29463-7\",\n                \"display\": \"Body weight\"\n            }\n        ]\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"subject\": {\n        \"reference\": \"Patient/100000030015\",\n        \"display\": \"Diana Smith\"\n    },\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"valueQuantity\": {\n        \"value\": 66.777,\n        \"unit\": \"kg\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"code\": \"kg\"\n    }\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -7154,20 +7154,20 @@
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
-											"key": "last-modified",
-											"value": "Fri, 05 Jan 2024 08:12:52 UTC"
-										},
-										{
-											"key": "etag",
-											"value": "W/\"MTcwNDQ0MjM3MjUyMTkxNzAwMA\""
-										},
-										{
 											"key": "content-type",
 											"value": "application/json"
 										},
 										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4NTM5NzU3OTk0MjAwMA\""
+										},
+										{
 											"key": "location",
-											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/8c6248ca-8fb6-4fb0-b00e-6c23966b5c20/_history/MTcwNDQ0MjM3MjUyMTkxNzAwMA"
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/58b9d4bb-530b-48e9-9ab0-ceaba83f8004/_history/MTcwNDY4NTM5NzU3OTk0MjAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 03:43:17 UTC"
 										},
 										{
 											"key": "vary",
@@ -7183,11 +7183,11 @@
 										},
 										{
 											"key": "date",
-											"value": "Fri, 05 Jan 2024 08:12:52 GMT"
+											"value": "Mon, 08 Jan 2024 03:43:17 GMT"
 										},
 										{
 											"key": "content-length",
-											"value": "834"
+											"value": "818"
 										},
 										{
 											"key": "X-Xss-Protection",
@@ -7203,7 +7203,7 @@
 										},
 										{
 											"key": "x-request-id",
-											"value": "ac4c9aea-2999-4839-adc6-00006599086b"
+											"value": "b295438e-6990-4ffe-95bc-18d930aacf59"
 										},
 										{
 											"key": "Via",
@@ -7231,7 +7231,412 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"vital-signs\",\n                    \"display\": \"Vital Signs\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"8462-4\",\n                \"display\": \"Diastolic blood pressure\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"8c6248ca-8fb6-4fb0-b00e-6c23966b5c20\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-05T08:12:52.521917+00:00\",\n        \"versionId\": \"MTcwNDQ0MjM3MjUyMTkxNzAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"mm[Hg]\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"mmHg\",\n        \"value\": 90.3\n    }\n}"
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"vital-signs\",\n                    \"display\": \"Vital Signs\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"29463-7\",\n                \"display\": \"Body weight\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"58b9d4bb-530b-48e9-9ab0-ceaba83f8004\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T03:43:17.579942+00:00\",\n        \"versionId\": \"MTcwNDY4NTM5NzU3OTk0MjAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"kg\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"kg\",\n        \"value\": 66.777\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Tinggi Badan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"8302-2\",\n        \"display\": \"Body height\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 169.777,\n    \"unit\": \"cm\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"cm\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Tinggi Badan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"8302-2\",\n        \"display\": \"Body height\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 169.777,\n    \"unit\": \"cm\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"cm\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4NTUxMjM3MTIyNzAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 03:45:12 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/9d84e81d-cdcc-4b02-b58d-09f05683c211/_history/MTcwNDY4NTUxMjM3MTIyNzAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 03:45:12 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "818"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "b7edb7fc-064a-4af2-a73f-b18c21947c7c"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"vital-signs\",\n                    \"display\": \"Vital Signs\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"8302-2\",\n                \"display\": \"Body height\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"9d84e81d-cdcc-4b02-b58d-09f05683c211\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T03:45:12.371227+00:00\",\n        \"versionId\": \"MTcwNDY4NTUxMjM3MTIyNzAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"cm\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"cm\",\n        \"value\": 169.777\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Indeks Massa Tubuh (IMT)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"39156-5\",\n        \"display\": \"Body mass index (BMI) [Ratio]\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 17.777,\n    \"unit\": \"kg/m^2\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"kg/m2\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/ObservationInterpretation\",\n        //   \"code\": \"BMI-SevereUnder\",\n        //   \"display\": \"Severely Underweight\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"248342006\",\n          \"display\": \"Underweight\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/ObservationInterpretation\",\n        //   \"code\": \"BMI-Normal\",\n        //   \"display\": \"Normal weight\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"238131007\",\n        //   \"display\": \"Overweight\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"414915002\",\n        //   \"display\": \"Obese\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Indeks Massa Tubuh (IMT)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"39156-5\",\n        \"display\": \"Body mass index (BMI) [Ratio]\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 17.777,\n    \"unit\": \"kg/m^2\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"kg/m2\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/ObservationInterpretation\",\n        //   \"code\": \"BMI-SevereUnder\",\n        //   \"display\": \"Severely Underweight\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"248342006\",\n          \"display\": \"Underweight\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/ObservationInterpretation\",\n        //   \"code\": \"BMI-Normal\",\n        //   \"display\": \"Normal weight\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"238131007\",\n        //   \"display\": \"Overweight\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"414915002\",\n        //   \"display\": \"Obese\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/f31f80e7-549e-4053-8ee4-26ba54a1310b/_history/MTcwNDY4NjAxMjYyODY4NTAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4NjAxMjYyODY4NTAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 03:53:32 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 03:53:32 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "954"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "b94850b3-01d3-4ee2-8ee9-0a96a5bdffe4"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"vital-signs\",\n                    \"display\": \"Vital Signs\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"39156-5\",\n                \"display\": \"Body mass index (BMI) [Ratio]\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"f31f80e7-549e-4053-8ee4-26ba54a1310b\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"248342006\",\n                    \"display\": \"Underweight\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T03:53:32.628685+00:00\",\n        \"versionId\": \"MTcwNDY4NjAxMjYyODY4NTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"kg/m2\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"kg/m^2\",\n        \"value\": 17.777\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Lingkar Perut",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"396552003\",\n        \"display\": \"Abdominal circumference\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 77.7,\n    \"unit\": \"cm\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"cm\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"N\",\n          \"display\": \"Normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"248311001\",\n        //   \"display\": \"Central obesity\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Lingkar Perut",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"396552003\",\n        \"display\": \"Abdominal circumference\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 77.7,\n    \"unit\": \"cm\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"cm\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"N\",\n          \"display\": \"Normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"248311001\",\n        //   \"display\": \"Central obesity\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 03:58:11 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/ff9b92bd-77e4-4ebf-89d3-be6b802fcf89/_history/MTcwNDY4NjI5MTg5NjA1OTAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4NjI5MTg5NjA1OTAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 03:58:11 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "978"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "44b56583-896d-4ad0-9544-e0276bced910"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"vital-signs\",\n                    \"display\": \"Vital Signs\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"396552003\",\n                \"display\": \"Abdominal circumference\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"ff9b92bd-77e4-4ebf-89d3-be6b802fcf89\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"N\",\n                    \"display\": \"Normal\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T03:58:11.896059+00:00\",\n        \"versionId\": \"MTcwNDY4NjI5MTg5NjA1OTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"cm\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"cm\",\n        \"value\": 77.7\n    }\n}"
 								}
 							]
 						}
