@@ -9598,7 +9598,232 @@
 		},
 		{
 			"name": "03F. Deteksi Dini Asam Urat",
-			"item": []
+			"item": [
+				{
+					"name": "Pemeriksaan Asam Urat",
+					"item": [
+						{
+							"name": "Observation - Pemeriksaan Asam Urat",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"3084-1\",\n        \"display\": \"Urate [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 7.77,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"1186906007\",\n        //   \"display\": \"Uric acid within reference range\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"49099001\",\n          \"display\": \"Uric acid level above reference range\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Pemeriksaan Asam Urat (Code not found)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"3084-1\",\n        \"display\": \"Urate [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 5.55,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"1186906007\",\n          \"display\": \"Uric acid within reference range\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"49099001\",\n        //   \"display\": \"Uric acid level above reference range\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "f8c91bc4-1c5a-4f3f-90d6-a8b8c3c47d2f"
+										},
+										{
+											"key": "content-length",
+											"value": "267"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:30:44 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resourceType\": \"OperationOutcome\",\n    \"text\": {\n        \"status\": \"generated\"\n    },\n    \"issue\": [\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Code not found: '1186906007' in system: http://snomed.info/sct (RuleNumber: 10398)\"\n            },\n            \"expression\": [\n                \"Observation.interpretation[0].code\"\n            ]\n        }\n    ]\n}"
+								},
+								{
+									"name": "Observation - Pemeriksaan Asam Urat",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"3084-1\",\n        \"display\": \"Urate [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 7.77,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"1186906007\",\n        //   \"display\": \"Uric acid within reference range\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"49099001\",\n          \"display\": \"Uric acid level above reference range\"\n        }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/9a8d9e50-f54a-4e1a-b450-df46d535afe6/_history/MTcwNDY5NTYwMzM3MTQzNTAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NTYwMzM3MTQzNTAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 06:33:23 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:33:23 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "982"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "bf7b578d-dbb2-43e3-a454-d26cbe9981ce"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"3084-1\",\n                \"display\": \"Urate [Mass/volume] in Serum or Plasma\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"9a8d9e50-f54a-4e1a-b450-df46d535afe6\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"49099001\",\n                    \"display\": \"Uric acid level above reference range\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T06:33:23.371435+00:00\",\n        \"versionId\": \"MTcwNDY5NTYwMzM3MTQzNTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"mg/dL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"mg/dL\",\n        \"value\": 7.77\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "03G. Deteksi Dini Kanker",
