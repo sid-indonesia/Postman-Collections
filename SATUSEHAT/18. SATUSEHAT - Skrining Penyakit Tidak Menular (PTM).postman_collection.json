@@ -7646,7 +7646,771 @@
 		},
 		{
 			"name": "03C. Deteksi Dini Penyakit Jantung (khusus bagi pasien DM/HT)",
-			"item": []
+			"item": [
+				{
+					"name": "Pemeriksaan EKG",
+					"item": [
+						{
+							"name": "Observation - EKG",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"29303009\",\n        \"display\": \"Electrocardiographic procedure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"164854000\",\n        \"display\": \"Electrocardiogram normal\"\n      }\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"102594003\",\n      //   \"display\": \"Electrocardiogram abnormal\"\n      // }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - EKG",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"29303009\",\n        \"display\": \"Electrocardiographic procedure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"164854000\",\n        \"display\": \"Electrocardiogram normal\"\n      }\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"102594003\",\n      //   \"display\": \"Electrocardiogram abnormal\"\n      // }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/242d54b1-51fc-4ae5-9863-bf029e32e09a/_history/MTcwNDY4NzA2NzkzMzMxNTAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 04:11:07 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4NzA2NzkzMzMxNTAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:11:07 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "864"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "a0019fb4-562c-4332-ac97-b7c157903b21"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"29303009\",\n                \"display\": \"Electrocardiographic procedure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"242d54b1-51fc-4ae5-9863-bf029e32e09a\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T04:11:07.933315+00:00\",\n        \"versionId\": \"MTcwNDY4NzA2NzkzMzMxNTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"164854000\",\n                \"display\": \"Electrocardiogram normal\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "Observation - EKG (unparseable)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"29303009\",\n        \"display\": \"Electrocardiographic procedure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"164854000\",\n        \"display\": \"Electrocardiogram normal\"\n      }\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"102594003\",\n      //   \"display\": \"Electrocardiogram abnormal\"\n      // }\n    ]\n  },\n  \"valueString\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/fhir+json;charset=utf-8"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:12:30 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "330"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "8d01b040-f824-485f-980a-ceff9a1e5196"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"issue\": [\n        {\n            \"code\": \"structure\",\n            \"details\": {\n                \"text\": \"unparseable_resource\"\n            },\n            \"diagnostics\": \"cannot accept multiple values for value field: \\\"valueString\\\"\",\n            \"expression\": [\n                \"Observation\"\n            ],\n            \"severity\": \"error\"\n        }\n    ],\n    \"resourceType\": \"OperationOutcome\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Keterangan EKG",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"29303009\",\n        \"display\": \"Electrocardiographic procedure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueString\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Keterangan EKG",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"29303009\",\n        \"display\": \"Electrocardiographic procedure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueString\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 04:11:17 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4NzA3Nzk4MTI3NTAwMA\""
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/05f3076b-e0ed-4679-8610-b68ff8c7bf28/_history/MTcwNDY4NzA3Nzk4MTI3NTAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:11:17 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "686"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "5261503b-bbc3-4c00-9808-3fa985d9304e"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"29303009\",\n                \"display\": \"Electrocardiographic procedure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"05f3076b-e0ed-4679-8610-b68ff8c7bf28\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T04:11:17.981275+00:00\",\n        \"versionId\": \"MTcwNDY4NzA3Nzk4MTI3NTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueString\": \"String of clinical conclusion (interpretation) of test results\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Laporan Hasil Pemeriksaan EKG",
+					"item": [
+						{
+							"name": "DiagnosticReport - Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"DiagnosticReport\",\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/diagnostic/10085103/lab\",\n  //     \"use\": \"official\",\n  //     \"value\": \"5234342\"\n  //   }\n  // ],\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\n          \"code\": \"EC\",\n          \"display\": \"Electrocardiac (e.g., EKG, EEC, Holter)\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"code\": \"34534-8\",\n        \"display\": \"12 lead EKG panel\",\n        \"system\": \"http://loinc.org\"\n      }\n    ]\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n  \"issued\": \"2023-11-06T10:00:00+00:00\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    },\n    {\n      \"reference\": \"Organization/10085103\"\n    }\n  ],\n  \"result\": [\n    {\n      \"reference\": \"Observation/242d54b1-51fc-4ae5-9863-bf029e32e09a\"\n    }\n  ],\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/8a376979-8ec0-400c-98c2-552ed2097e16\"\n    }\n  ],\n  \"conclusionCode\": [\n    {\n      \"coding\": [\n        // Select one\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"164854000\",\n          \"display\": \"Electrocardiogram normal\"\n        }\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"102594003\",\n        //   \"display\": \"Electrocardiogram abnormal\"\n        // }\n      ]\n    }\n  ],\n  \"conclusion\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/DiagnosticReport",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"DiagnosticReport"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "DiagnosticReport - Create (Invalid coding system)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"DiagnosticReport\",\n  \"identifier\": [\n    {\n      \"system\": \"http://sys-ids.kemkes.go.id/diagnostic/10085103/ekg\",\n      \"use\": \"official\",\n      \"value\": \"5234342\"\n    }\n  ],\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\n          \"code\": \"EC\",\n          \"display\": \"Electrocardiac (e.g., EKG, EEC, Holter)\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"code\": \"29303009\",\n        \"display\": \"Electrocardiographic procedure\",\n        \"system\": \"http://snomed.info/sct\"\n      }\n    ]\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n  \"issued\": \"2023-11-06T10:00:00+00:00\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    },\n    {\n      \"reference\": \"Organization/10085103\"\n    }\n  ],\n  \"result\": [\n    {\n      \"reference\": \"Observation/242d54b1-51fc-4ae5-9863-bf029e32e09a\"\n    }\n  ],\n  // \"basedOn\": [\n  //   {\n  //     \"reference\": \"ServiceRequest/8a376979-8ec0-400c-98c2-552ed2097e16\"\n  //   }\n  // ],\n  \"conclusionCode\": [\n    // Select one\n    {\n      \"system\": \"http://snomed.info/sct\",\n      \"code\": \"164854000\",\n      \"display\": \"Electrocardiogram normal\"\n    }\n    // {\n    //   \"system\": \"http://snomed.info/sct\",\n    //   \"code\": \"102594003\",\n    //   \"display\": \"Electrocardiogram abnormal\"\n    // }\n  ],\n  \"conclusion\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/DiagnosticReport",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"DiagnosticReport"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "f0112b97-2642-42d8-ab14-8b63a517a9dd"
+										},
+										{
+											"key": "content-length",
+											"value": "646"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:22:43 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resourceType\": \"OperationOutcome\",\n    \"text\": {\n        \"status\": \"generated\"\n    },\n    \"issue\": [\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Invalid coding system: http://snomed.info/sct (RuleNumber: 10071)\"\n            },\n            \"expression\": [\n                \"DiagnosticReport.code[0].system\"\n            ]\n        },\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Reference is mandatory : DiagnosticReport.basedOn (RuleNumber: 10387)\"\n            },\n            \"expression\": [\n                \"DiagnosticReport.basedOn\"\n            ]\n        },\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Wrong organization ID provided by system URL: http://sys-ids.kemkes.go.id/diagnostic/10085103/ekg (RuleNumber: 10432)\"\n            },\n            \"expression\": [\n                \"DiagnosticReport.identifier[0].system\"\n            ]\n        }\n    ]\n}"
+								},
+								{
+									"name": "DiagnosticReport - Create (Reference is mandatory : DiagnosticReport.basedOn)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"DiagnosticReport\",\n  \"identifier\": [\n    {\n      \"system\": \"http://sys-ids.kemkes.go.id/diagnostic/10085103/ekg\",\n      \"use\": \"official\",\n      \"value\": \"5234342\"\n    }\n  ],\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\n          \"code\": \"EC\",\n          \"display\": \"Electrocardiac (e.g., EKG, EEC, Holter)\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"code\": \"34534-8\",\n        \"display\": \"12 lead EKG panel\",\n        \"system\": \"http://loinc.org\"\n      }\n    ]\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n  \"issued\": \"2023-11-06T10:00:00+00:00\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    },\n    {\n      \"reference\": \"Organization/10085103\"\n    }\n  ],\n  \"result\": [\n    {\n      \"reference\": \"Observation/242d54b1-51fc-4ae5-9863-bf029e32e09a\"\n    }\n  ],\n  // \"basedOn\": [\n  //   {\n  //     \"reference\": \"ServiceRequest/8a376979-8ec0-400c-98c2-552ed2097e16\"\n  //   }\n  // ],\n  \"conclusionCode\": [\n    // Select one\n    {\n      \"system\": \"http://snomed.info/sct\",\n      \"code\": \"164854000\",\n      \"display\": \"Electrocardiogram normal\"\n    }\n    // {\n    //   \"system\": \"http://snomed.info/sct\",\n    //   \"code\": \"102594003\",\n    //   \"display\": \"Electrocardiogram abnormal\"\n    // }\n  ],\n  \"conclusion\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/DiagnosticReport",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"DiagnosticReport"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "9cf29739-d8b1-428d-93ef-f85655250b49"
+										},
+										{
+											"key": "content-length",
+											"value": "474"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:24:58 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resourceType\": \"OperationOutcome\",\n    \"text\": {\n        \"status\": \"generated\"\n    },\n    \"issue\": [\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Reference is mandatory : DiagnosticReport.basedOn (RuleNumber: 10387)\"\n            },\n            \"expression\": [\n                \"DiagnosticReport.basedOn\"\n            ]\n        },\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Wrong organization ID provided by system URL: http://sys-ids.kemkes.go.id/diagnostic/10085103/ekg (RuleNumber: 10432)\"\n            },\n            \"expression\": [\n                \"DiagnosticReport.identifier[0].system\"\n            ]\n        }\n    ]\n}"
+								},
+								{
+									"name": "DiagnosticReport - Create (Wrong org ID)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"DiagnosticReport\",\n  \"identifier\": [\n    {\n      \"system\": \"http://sys-ids.kemkes.go.id/diagnostic/10085103/ekg\",\n      \"use\": \"official\",\n      \"value\": \"5234342\"\n    }\n  ],\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\n          \"code\": \"EC\",\n          \"display\": \"Electrocardiac (e.g., EKG, EEC, Holter)\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"code\": \"34534-8\",\n        \"display\": \"12 lead EKG panel\",\n        \"system\": \"http://loinc.org\"\n      }\n    ]\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n  \"issued\": \"2023-11-06T10:00:00+00:00\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    },\n    {\n      \"reference\": \"Organization/10085103\"\n    }\n  ],\n  \"result\": [\n    {\n      \"reference\": \"Observation/242d54b1-51fc-4ae5-9863-bf029e32e09a\"\n    }\n  ],\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/8a376979-8ec0-400c-98c2-552ed2097e16\"\n    }\n  ],\n  \"conclusionCode\": [\n    // Select one\n    {\n      \"system\": \"http://snomed.info/sct\",\n      \"code\": \"164854000\",\n      \"display\": \"Electrocardiogram normal\"\n    }\n    // {\n    //   \"system\": \"http://snomed.info/sct\",\n    //   \"code\": \"102594003\",\n    //   \"display\": \"Electrocardiogram abnormal\"\n    // }\n  ],\n  \"conclusion\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/DiagnosticReport",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"DiagnosticReport"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "edd0c6cd-0b17-48b3-b9ee-9a81e2ca4ec6"
+										},
+										{
+											"key": "content-length",
+											"value": "305"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:26:44 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resourceType\": \"OperationOutcome\",\n    \"text\": {\n        \"status\": \"generated\"\n    },\n    \"issue\": [\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Wrong organization ID provided by system URL: http://sys-ids.kemkes.go.id/diagnostic/10085103/ekg (RuleNumber: 10432)\"\n            },\n            \"expression\": [\n                \"DiagnosticReport.identifier[0].system\"\n            ]\n        }\n    ]\n}"
+								},
+								{
+									"name": "DiagnosticReport - Create",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"DiagnosticReport\",\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/diagnostic/10085103/lab\",\n  //     \"use\": \"official\",\n  //     \"value\": \"5234342\"\n  //   }\n  // ],\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\n          \"code\": \"EC\",\n          \"display\": \"Electrocardiac (e.g., EKG, EEC, Holter)\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"code\": \"34534-8\",\n        \"display\": \"12 lead EKG panel\",\n        \"system\": \"http://loinc.org\"\n      }\n    ]\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n  \"issued\": \"2023-11-06T10:00:00+00:00\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    },\n    {\n      \"reference\": \"Organization/10085103\"\n    }\n  ],\n  \"result\": [\n    {\n      \"reference\": \"Observation/242d54b1-51fc-4ae5-9863-bf029e32e09a\"\n    }\n  ],\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/8a376979-8ec0-400c-98c2-552ed2097e16\"\n    }\n  ],\n  \"conclusionCode\": [\n    {\n      \"coding\": [\n        // Select one\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"164854000\",\n          \"display\": \"Electrocardiogram normal\"\n        }\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"102594003\",\n        //   \"display\": \"Electrocardiogram abnormal\"\n        // }\n      ]\n    }\n  ],\n  \"conclusion\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/DiagnosticReport",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"DiagnosticReport"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 04:41:15 UTC"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4ODg3NTU4NzUyNjAwMA\""
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/DiagnosticReport/9c3502a9-1dd9-4279-aac9-22cdd02a9db7/_history/MTcwNDY4ODg3NTU4NzUyNjAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:41:15 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "1113"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "3b2d6707-4a85-4de4-85e3-d5601463d183"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"basedOn\": [\n        {\n            \"reference\": \"ServiceRequest/8a376979-8ec0-400c-98c2-552ed2097e16\"\n        }\n    ],\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"EC\",\n                    \"display\": \"Electrocardiac (e.g., EKG, EEC, Holter)\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"34534-8\",\n                \"display\": \"12 lead EKG panel\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"conclusion\": \"String of clinical conclusion (interpretation) of test results\",\n    \"conclusionCode\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"164854000\",\n                    \"display\": \"Electrocardiogram normal\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"9c3502a9-1dd9-4279-aac9-22cdd02a9db7\",\n    \"identifier\": [],\n    \"issued\": \"2023-11-06T10:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T04:41:15.587526+00:00\",\n        \"versionId\": \"MTcwNDY4ODg3NTU4NzUyNjAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        },\n        {\n            \"reference\": \"Organization/10085103\"\n        }\n    ],\n    \"resourceType\": \"DiagnosticReport\",\n    \"result\": [\n        {\n            \"reference\": \"Observation/242d54b1-51fc-4ae5-9863-bf029e32e09a\"\n        }\n    ],\n    \"status\": \"final\",\n    \"subject\": {\n        \"reference\": \"Patient/100000030015\"\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "03D. Deteksi Dini Diabetes Melitus",
