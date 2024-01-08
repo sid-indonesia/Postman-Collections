@@ -8964,7 +8964,637 @@
 		},
 		{
 			"name": "03E. Deteksi Dini Stroke",
-			"item": []
+			"item": [
+				{
+					"name": "Pemeriksaaan Profil Lipid",
+					"item": [
+						{
+							"name": "Observation - Kolesterol Total",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2093-3\",\n        \"display\": \"Cholesterol [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 177.771,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"N\",\n          \"display\": \"Normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HU\",\n        //   \"display\": \"Significantly high\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"H\",\n        //   \"display\": \"High\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Kolesterol Total",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2093-3\",\n        \"display\": \"Cholesterol [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 177.771,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"N\",\n          \"display\": \"Normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HU\",\n        //   \"display\": \"Significantly high\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"H\",\n        //   \"display\": \"High\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 06:13:54 UTC"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NDQzNDAzMjIxODAwMA\""
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/55e688ff-6ad4-42f9-93d6-099c37c3b2a0/_history/MTcwNDY5NDQzNDAzMjIxODAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:13:54 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "997"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "83ecb893-01a2-41b6-b59c-d09666464c97"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"2093-3\",\n                \"display\": \"Cholesterol [Mass/volume] in Serum or Plasma\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"55e688ff-6ad4-42f9-93d6-099c37c3b2a0\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"N\",\n                    \"display\": \"Normal\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T06:13:54.032218+00:00\",\n        \"versionId\": \"MTcwNDY5NDQzNDAzMjIxODAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"mg/dL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"mg/dL\",\n        \"value\": 177.771\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - HDL",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2085-9\",\n        \"display\": \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 77.7,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"H\",\n          \"display\": \"High\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"L\",\n        //   \"display\": \"Low\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - HDL",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2085-9\",\n        \"display\": \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 77.7,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"H\",\n          \"display\": \"High\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"L\",\n        //   \"display\": \"Low\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NDY2MDE1ODY2MzAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 06:17:40 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/3864880d-eecb-4f97-bcd9-bc887ce0cb45/_history/MTcwNDY5NDY2MDE1ODY2MzAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:17:40 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "999"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "c2406168-3dc3-48c9-af33-010fc42529eb"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"2085-9\",\n                \"display\": \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"3864880d-eecb-4f97-bcd9-bc887ce0cb45\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"H\",\n                    \"display\": \"High\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T06:17:40.158663+00:00\",\n        \"versionId\": \"MTcwNDY5NDY2MDE1ODY2MzAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"mg/dL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"mg/dL\",\n        \"value\": 77.7\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - LDL",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2089-1\",\n        \"display\": \"Cholesterol in LDL [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 127.721,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"N\",\n          \"display\": \"Normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //   \"code\": \"OI000072\",\n        //   \"display\": \"LDL Mendekati Optimal (Near optimal)\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HU\",\n        //   \"display\": \"Significantly high\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"H\",\n        //   \"display\": \"High\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HH\",\n        //   \"display\": \"Critical high\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - LDL (Code not found)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2089-1\",\n        \"display\": \"Cholesterol in LDL [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 127.721,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"N\",\n          \"display\": \"Normal\"\n        }\n        ,\n        {\n          \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n          \"code\": \"OI000072\",\n          \"display\": \"LDL Mendekati Optimal (Near optimal)\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HU\",\n        //   \"display\": \"Significantly high\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"H\",\n        //   \"display\": \"High\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HH\",\n        //   \"display\": \"Critical high\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "e1f4e890-dcd5-4751-8946-89e54e89763e"
+										},
+										{
+											"key": "content-length",
+											"value": "299"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:21:19 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resourceType\": \"OperationOutcome\",\n    \"text\": {\n        \"status\": \"generated\"\n    },\n    \"issue\": [\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Code not found: 'OI000072' in system: http://terminology.kemkes.go.id/CodeSystem/clinical-term (RuleNumber: 10398)\"\n            },\n            \"expression\": [\n                \"Observation.interpretation[1].code\"\n            ]\n        }\n    ]\n}"
+								},
+								{
+									"name": "Observation - LDL",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2089-1\",\n        \"display\": \"Cholesterol in LDL [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 127.721,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"N\",\n          \"display\": \"Normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //   \"code\": \"OI000072\",\n        //   \"display\": \"LDL Mendekati Optimal (Near optimal)\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HU\",\n        //   \"display\": \"Significantly high\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"H\",\n        //   \"display\": \"High\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HH\",\n        //   \"display\": \"Critical high\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NDkxNTU2MDM0MjAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 06:21:55 UTC"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/4d762379-0ddf-4f7e-babc-5344da247900/_history/MTcwNDY5NDkxNTU2MDM0MjAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:21:55 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "1004"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "247bf47c-96fb-486a-ab5a-ddeed1e54b3a"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"2089-1\",\n                \"display\": \"Cholesterol in LDL [Mass/volume] in Serum or Plasma\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"4d762379-0ddf-4f7e-babc-5344da247900\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"N\",\n                    \"display\": \"Normal\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T06:21:55.560342+00:00\",\n        \"versionId\": \"MTcwNDY5NDkxNTU2MDM0MjAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"mg/dL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"mg/dL\",\n        \"value\": 127.721\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Trigliserida",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2571-8\",\n        \"display\": \"Triglyceride [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 147.741,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"166846000\",\n          \"display\": \"Serum triglycerides within reference range\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HU\",\n        //   \"display\": \"Significantly high\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"370992007\",\n        //   \"display\": \"High blood cholesterol/triglycerides\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HH\",\n        //   \"display\": \"Critical high\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Trigliserida",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2571-8\",\n        \"display\": \"Triglyceride [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 147.741,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"166846000\",\n          \"display\": \"Serum triglycerides within reference range\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HU\",\n        //   \"display\": \"Significantly high\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"370992007\",\n        //   \"display\": \"High blood cholesterol/triglycerides\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n        //   \"code\": \"HH\",\n        //   \"display\": \"Critical high\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 06:26:25 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NTE4NTk3MDg2MDAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/2f54dbd2-559a-45c2-b6cc-54d39b9e9c87/_history/MTcwNDY5NTE4NTk3MDg2MDAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:26:25 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "998"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "7fd8d257-99aa-4ec9-8176-4f2ecb29c6b1"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"2571-8\",\n                \"display\": \"Triglyceride [Mass/volume] in Serum or Plasma\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"2f54dbd2-559a-45c2-b6cc-54d39b9e9c87\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"166846000\",\n                    \"display\": \"Serum triglycerides within reference range\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T06:26:25.970860+00:00\",\n        \"versionId\": \"MTcwNDY5NTE4NTk3MDg2MDAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"mg/dL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"mg/dL\",\n        \"value\": 147.741\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "03F. Deteksi Dini Asam Urat",
