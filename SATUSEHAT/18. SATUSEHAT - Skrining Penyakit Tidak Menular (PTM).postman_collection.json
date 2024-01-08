@@ -8414,7 +8414,553 @@
 		},
 		{
 			"name": "03D. Deteksi Dini Diabetes Melitus",
-			"item": []
+			"item": [
+				{
+					"name": "Pemeriksaan Gula Darah",
+					"item": [
+						{
+							"name": "Observation - Gula Darah Sewaktu (GDS)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2345-7\",\n        \"display\": \"Glucose [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 123.456,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"166921001\",\n          \"display\": \"Blood glucose within reference range\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"714628002\",\n        //   \"display\": \"Prediabetes\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"73211009\",\n        //   \"display\": \"Diabetes mellitus\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Gula Darah Sewaktu (GDS)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"2345-7\",\n        \"display\": \"Glucose [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 123.456,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"166921001\",\n          \"display\": \"Blood glucose within reference range \"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"714628002\",\n        //   \"display\": \"Prediabetes\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"73211009\",\n        //   \"display\": \"Diabetes mellitus\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/b5eb4e1d-afce-4422-8049-3870cc76984c/_history/MTcwNDY4OTM3MzY0NTc5OTAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4OTM3MzY0NTc5OTAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 04:49:33 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:49:33 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "988"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "331f3e6f-befa-4522-a513-8b4c8a3ee368"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"2345-7\",\n                \"display\": \"Glucose [Mass/volume] in Serum or Plasma\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"b5eb4e1d-afce-4422-8049-3870cc76984c\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"166921001\",\n                    \"display\": \"Blood glucose within reference range \",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T04:49:33.645799+00:00\",\n        \"versionId\": \"MTcwNDY4OTM3MzY0NTc5OTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"mg/dL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"mg/dL\",\n        \"value\": 123.456\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Gula Darah Puasa",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"1558-6\",\n        \"display\": \"Fasting glucose [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 77.777,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"166921001\",\n          \"display\": \"Blood glucose within reference range\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"714628002\",\n        //   \"display\": \"Prediabetes\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"73211009\",\n        //   \"display\": \"Diabetes mellitus\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Gula Darah Puasa",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"1558-6\",\n        \"display\": \"Fasting glucose [Mass/volume] in Serum or Plasma\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 77.777,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"166921001\",\n          \"display\": \"Blood glucose within reference range \"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"714628002\",\n        //   \"display\": \"Prediabetes\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"73211009\",\n        //   \"display\": \"Diabetes mellitus\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/baa1bbbf-8e04-4ffb-9fd2-6d5ccd823987/_history/MTcwNDY4OTQ3MjIxMzE1ODAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4OTQ3MjIxMzE1ODAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 04:51:12 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:51:12 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "995"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "4d5eda33-a2f2-472c-bf26-95cd9bf085f8"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"1558-6\",\n                \"display\": \"Fasting glucose [Mass/volume] in Serum or Plasma\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"baa1bbbf-8e04-4ffb-9fd2-6d5ccd823987\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"166921001\",\n                    \"display\": \"Blood glucose within reference range \",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T04:51:12.213158+00:00\",\n        \"versionId\": \"MTcwNDY4OTQ3MjIxMzE1ODAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"mg/dL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"mg/dL\",\n        \"value\": 77.777\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Gula darah 2 jam pasca puasa",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"20436-2\",\n        \"display\": \"Glucose [Mass/volume] in Serum or Plasma --2 hours post dose glucose\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 133.3,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"166921001\",\n          \"display\": \"Blood glucose within reference range\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"714628002\",\n        //   \"display\": \"Prediabetes\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"73211009\",\n        //   \"display\": \"Diabetes mellitus\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Gula darah 2 jam pasca puasa",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"20436-2\",\n        \"display\": \"Glucose [Mass/volume] in Serum or Plasma --2 hours post dose glucose\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 133.3,\n    \"unit\": \"mg/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"mg/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"166921001\",\n          \"display\": \"Blood glucose within reference range \"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"714628002\",\n        //   \"display\": \"Prediabetes\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"73211009\",\n        //   \"display\": \"Diabetes mellitus\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4OTYyMTY3NTg4OTAwMA\""
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/c9427cf2-dc3b-4ddd-8b77-d427ddc1ba2e/_history/MTcwNDY4OTYyMTY3NTg4OTAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 04:53:41 UTC"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:53:41 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "1015"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "96878887-2b6b-4646-99df-90d3d1bad576"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"20436-2\",\n                \"display\": \"Glucose [Mass/volume] in Serum or Plasma --2 hours post dose glucose\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"c9427cf2-dc3b-4ddd-8b77-d427ddc1ba2e\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"166921001\",\n                    \"display\": \"Blood glucose within reference range \",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T04:53:41.675889+00:00\",\n        \"versionId\": \"MTcwNDY4OTYyMTY3NTg4OTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"mg/dL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"mg/dL\",\n        \"value\": 133.3\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - HbA1C",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"4548-4\",\n        \"display\": \"Hemoglobin A1c/Hemoglobin.total in Blood\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 5.55,\n    \"unit\": \"%\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"%\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"N\",\n          \"display\": \"Normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"714628002\",\n        //   \"display\": \"Prediabetes\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"73211009\",\n        //   \"display\": \"Diabetes mellitus\"\n        // }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - HbA1C",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"4548-4\",\n        \"display\": \"Hemoglobin A1c/Hemoglobin.total in Blood\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 5.55,\n    \"unit\": \"%\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"%\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select multiple with some logic\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"N\",\n          \"display\": \"Normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"714628002\",\n        //   \"display\": \"Prediabetes\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"73211009\",\n        //   \"display\": \"Diabetes mellitus\"\n        // }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/bb75a97f-21cc-4e63-9fac-4bae247e6abf/_history/MTcwNDY4OTgxNjE1ODg3NTAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 04:56:56 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY4OTgxNjE1ODg3NTAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 04:56:56 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "982"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "dee3eca1-ba1d-44be-9e3c-205ac4fbdb80"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"4548-4\",\n                \"display\": \"Hemoglobin A1c/Hemoglobin.total in Blood\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"bb75a97f-21cc-4e63-9fac-4bae247e6abf\",\n    \"identifier\": [],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"N\",\n                    \"display\": \"Normal\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T04:56:56.158875+00:00\",\n        \"versionId\": \"MTcwNDY4OTgxNjE1ODg3NTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"%\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"%\",\n        \"value\": 5.55\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "03E. Deteksi Dini Stroke",
