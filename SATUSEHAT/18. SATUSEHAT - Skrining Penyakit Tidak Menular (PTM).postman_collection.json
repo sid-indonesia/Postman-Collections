@@ -2,10 +2,9 @@
 	"info": {
 		"_postman_id": "a1ddd7c0-0416-4c21-9889-6bee958fbb62",
 		"name": "18. SATUSEHAT - Skrining Penyakit Tidak Menular (PTM)",
-		"description": "For **complete repository for all SATUSEHAT use-cases** please access our public workspaces : [Postman Workspaces](https://s.id/PostmanSATUSEHAT)\n\nFor **detailed SATUSEHAT use-cases import link** please see : [Postman Public Kemkes Link](https://link.kemkes.go.id/PostmanSATUSEHAT)\n\nAny information about SATUSEHAT FHIR Profile could be accessed through [Simplifier FHIR Profile](https://simplifier.net/guide/SATUSEHAT-FHIR-R4-Implementation-Guide/Home/FHIRProfiles?version=current)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14543449",
-		"_collection_link": "https://sid-indonesia.postman.co/workspace/SID-Workspace~296051ea-1803-4e75-87e5-a301bfbcc729/collection/14543449-a1ddd7c0-0416-4c21-9889-6bee958fbb62?action=share&source=collection_link&creator=14543449"
+		"_collection_link": "https://sid-indonesia.postman.co/workspace/SID-x-DTO~2a164aa8-f244-4d7f-9bfd-d9541ce4af90/collection/14543449-a1ddd7c0-0416-4c21-9889-6bee958fbb62?action=share&source=collection_link&creator=14543449"
 	},
 	"item": [
 		{
@@ -9829,12 +9828,1430 @@
 			"name": "03G. Deteksi Dini Kanker",
 			"item": [
 				{
-					"name": "Kanker Payudara (khusus wanita)",
-					"item": []
+					"name": "Kanker Serviks (khusus wanita)",
+					"item": [
+						{
+							"name": "Observation - Pemeriksaan Inspekulo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"451024007\",\n        \"display\": \"Inspection of vagina using vaginal speculum\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"315266007\",\n      //   \"display\": \"Suspected cervical cancer\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"395100000\",\n        \"display\": \"No evidence of cancer found\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Pemeriksaan Inspekulo",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"451024007\",\n        \"display\": \"Inspection of vagina using vaginal speculum\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"315266007\",\n      //   \"display\": \"Suspected cervical cancer\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"395100000\",\n        \"display\": \"No evidence of cancer found\"\n      }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/e248ac2f-a001-4e5e-9fa9-9bf0e274e694/_history/MTcwNDY5NjEwNjMwOTkwODAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 06:41:46 UTC"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NjEwNjMwOTkwODAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:41:46 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "881"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "2f49804e-2d67-4705-8ce9-49f450d1d65c"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"451024007\",\n                \"display\": \"Inspection of vagina using vaginal speculum\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"e248ac2f-a001-4e5e-9fa9-9bf0e274e694\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T06:41:46.309908+00:00\",\n        \"versionId\": \"MTcwNDY5NjEwNjMwOTkwODAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"395100000\",\n                \"display\": \"No evidence of cancer found\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "(Jika Inspekulo = Curiga Kanker) ServiceRequest - Rujukan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"ServiceRequest\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"3457005\",\n        \"display\": \"Patient referral\"\n      }\n    ]\n  },\n  \"locationCode\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\n          \"code\": \"HOSP\",\n          \"display\": \"Hospital\"\n        }\n      ]\n    }\n  ],\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/servicerequest/10085103\",\n  //     \"value\": \"00001\"\n  //   }\n  // ],\n  \"status\": \"active\",\n  \"intent\": \"original-order\",\n  \"priority\": \"routine\",\n  // \"category\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://snomed.info/sct\",\n  //         \"code\": \"277132007\",\n  //         \"display\": \"Therapeutic procedure\"\n  //       }\n  //     ]\n  //   }\n  // ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n  \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n  \"requester\": {\n    \"reference\": \"Practitioner/N10000001\",\n    \"display\": \"Dokter Bronsig\"\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000005\",\n      \"display\": \"Fatma\"\n    }\n  ]\n  // ,\n  // \"reasonReference\": [\n  //   {\n  //     \"reference\": \"Condition/c03be9cc-6059-4cca-9c60-fa5228dcb75a\"\n  //   }\n  // ],\n  // \"reasonCode\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://hl7.org/fhir/sid/icd-10\",\n  //         \"code\": \"C50.2\",\n  //         \"display\": \"Malignant neoplasm: Upper-inner quadrant of breast\"\n  //       }\n  //     ],\n  //     \"text\": \"Rencana operasi pengangkatan tumor\"\n  //   }\n  // ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ServiceRequest",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ServiceRequest"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "(Jika Inspekulo = Curiga Kanker) ServiceRequest - Rujukan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"ServiceRequest\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"3457005\",\n        \"display\": \"Patient referral\"\n      }\n    ]\n  },\n  \"locationCode\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\n          \"code\": \"HOSP\",\n          \"display\": \"Hospital\"\n        }\n      ]\n    }\n  ],\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/servicerequest/10085103\",\n  //     \"value\": \"00001\"\n  //   }\n  // ],\n  \"status\": \"active\",\n  \"intent\": \"original-order\",\n  \"priority\": \"routine\",\n  // \"category\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://snomed.info/sct\",\n  //         \"code\": \"277132007\",\n  //         \"display\": \"Therapeutic procedure\"\n  //       }\n  //     ]\n  //   }\n  // ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n  \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n  \"requester\": {\n    \"reference\": \"Practitioner/N10000001\",\n    \"display\": \"Dokter Bronsig\"\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000005\",\n      \"display\": \"Fatma\"\n    }\n  ]\n  // ,\n  // \"reasonReference\": [\n  //   {\n  //     \"reference\": \"Condition/c03be9cc-6059-4cca-9c60-fa5228dcb75a\"\n  //   }\n  // ],\n  // \"reasonCode\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://hl7.org/fhir/sid/icd-10\",\n  //         \"code\": \"C50.2\",\n  //         \"display\": \"Malignant neoplasm: Upper-inner quadrant of breast\"\n  //       }\n  //     ],\n  //     \"text\": \"Rencana operasi pengangkatan tumor\"\n  //   }\n  // ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/ServiceRequest",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"ServiceRequest"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/ServiceRequest/3b272273-7bed-42a4-99ed-b24f206406a5/_history/MTcwNDY5NzEyNDMxNzc3MjAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NzEyNDMxNzc3MjAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 06:58:44 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:58:44 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "872"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "48a666f6-9519-45e3-a907-eafe964a1f25"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"3457005\",\n                \"display\": \"Patient referral\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"3b272273-7bed-42a4-99ed-b24f206406a5\",\n    \"identifier\": [],\n    \"intent\": \"original-order\",\n    \"locationCode\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"HOSP\",\n                    \"display\": \"Hospital\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\"\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T06:58:44.317772+00:00\",\n        \"versionId\": \"MTcwNDY5NzEyNDMxNzc3MjAwMA\"\n    },\n    \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n    \"performer\": [\n        {\n            \"display\": \"Fatma\",\n            \"reference\": \"Practitioner/N10000005\"\n        }\n    ],\n    \"priority\": \"routine\",\n    \"requester\": {\n        \"display\": \"Dokter Bronsig\",\n        \"reference\": \"Practitioner/N10000001\"\n    },\n    \"resourceType\": \"ServiceRequest\",\n    \"status\": \"active\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Pemeriksaan IVA",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.kemkes.go.id/CodeSystem/examination\",\n        \"code\": \"X099241\",\n        \"display\": \"Tes IVA\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OV000370\",\n      //   \"display\": \"IVA Negatif\"\n      // }\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OV000371\",\n      //   \"display\": \"IVA Positif\"\n      // }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Pemeriksaan IVA (Code not found)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.kemkes.go.id/CodeSystem/examination\",\n        \"code\": \"X099241\",\n        \"display\": \"Tes IVA\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one\n      {\n        \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        \"code\": \"OV000370\",\n        \"display\": \"IVA Negatif\"\n      }\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OV000371\",\n      //   \"display\": \"IVA Positif\"\n      // }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "a5521ec5-b464-42c6-bad8-4b8a4f45ec9e"
+										},
+										{
+											"key": "content-length",
+											"value": "305"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:42:15 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resourceType\": \"OperationOutcome\",\n    \"text\": {\n        \"status\": \"generated\"\n    },\n    \"issue\": [\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Code not found: 'OV000370' in system: http://terminology.kemkes.go.id/CodeSystem/clinical-term (RuleNumber: 10297)\"\n            },\n            \"expression\": [\n                \"Observation.valueCodeableConcept[0].code\"\n            ]\n        }\n    ]\n}"
+								},
+								{
+									"name": "Observation - Pemeriksaan IVA",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.kemkes.go.id/CodeSystem/examination\",\n        \"code\": \"X099241\",\n        \"display\": \"Tes IVA\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OV000370\",\n      //   \"display\": \"IVA Negatif\"\n      // }\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OV000371\",\n      //   \"display\": \"IVA Positif\"\n      // }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/38a39808-d63f-40c9-b9a8-85c7096a98e3/_history/MTcwNDY5NjE2Mzk4Njc3ODAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NjE2Mzk4Njc3ODAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 06:42:43 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:42:44 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "770"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "6aeb42e3-9555-4574-bd1d-f479a4b939b2"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"X099241\",\n                \"display\": \"Tes IVA\",\n                \"system\": \"http://terminology.kemkes.go.id/CodeSystem/examination\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"38a39808-d63f-40c9-b9a8-85c7096a98e3\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T06:42:43.986778+00:00\",\n        \"versionId\": \"MTcwNDY5NjE2Mzk4Njc3ODAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "(Jika IVA = Positif) ServiceRequest - Tindakan/terapi",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"ServiceRequest\",\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/servicerequest/10085103\",\n  //     \"value\": \"00001\"\n  //   }\n  // ],\n  \"status\": \"active\",\n  \"intent\": \"original-order\",\n  \"priority\": \"routine\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"277132007\",\n          \"display\": \"Therapeutic procedure\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"26782000\",\n        \"display\": \"Cryotherapy\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"78151001\",\n        \"display\": \"Trichloroacetic acid\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"3457005\",\n        \"display\": \"Patient referral\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"413311005\",\n        \"display\": \"Patient non-compliant - declined intervention / support\"\n      }\n    ]\n    // ,\n    // \"text\": \"Operasi pengangkatan tumor\"\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n  \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n  \"requester\": {\n    \"reference\": \"Practitioner/N10000001\",\n    \"display\": \"Dokter Bronsig\"\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000005\",\n      \"display\": \"Fatma\"\n    }\n  ]\n  // ,\n  // \"reasonReference\": [\n  //   {\n  //     \"reference\": \"Condition/c03be9cc-6059-4cca-9c60-fa5228dcb75a\"\n  //   }\n  // ],\n  // \"reasonCode\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://hl7.org/fhir/sid/icd-10\",\n  //         \"code\": \"C50.2\",\n  //         \"display\": \"Malignant neoplasm: Upper-inner quadrant of breast\"\n  //       }\n  //     ],\n  //     \"text\": \"Rencana operasi pengangkatan tumor\"\n  //   }\n  // ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ServiceRequest",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ServiceRequest"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "(Jika IVA = Positif) ServiceRequest - Tindakan/terapi",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"ServiceRequest\",\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/servicerequest/10085103\",\n  //     \"value\": \"00001\"\n  //   }\n  // ],\n  \"status\": \"active\",\n  \"intent\": \"original-order\",\n  \"priority\": \"routine\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"277132007\",\n          \"display\": \"Therapeutic procedure\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"26782000\",\n        \"display\": \"Cryotherapy\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"78151001\",\n        \"display\": \"Trichloroacetic acid\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"3457005\",\n        \"display\": \"Patient referral\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"413311005\",\n        \"display\": \"Patient non-compliant - declined intervention / support\"\n      }\n    ]\n    // ,\n    // \"text\": \"Operasi pengangkatan tumor\"\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n  \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n  \"requester\": {\n    \"reference\": \"Practitioner/N10000001\",\n    \"display\": \"Dokter Bronsig\"\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000005\",\n      \"display\": \"Fatma\"\n    }\n  ]\n  // ,\n  // \"reasonReference\": [\n  //   {\n  //     \"reference\": \"Condition/c03be9cc-6059-4cca-9c60-fa5228dcb75a\"\n  //   }\n  // ],\n  // \"reasonCode\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://hl7.org/fhir/sid/icd-10\",\n  //         \"code\": \"C50.2\",\n  //         \"display\": \"Malignant neoplasm: Upper-inner quadrant of breast\"\n  //       }\n  //     ],\n  //     \"text\": \"Rencana operasi pengangkatan tumor\"\n  //   }\n  // ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/ServiceRequest",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"ServiceRequest"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NjcxNTA2NzQ3MzAwMA\""
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/ServiceRequest/eed4c821-2413-4528-804e-55e0581b8cda/_history/MTcwNDY5NjcxNTA2NzQ3MzAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 06:51:55 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 06:51:55 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "1147"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "ec6c016c-a315-48e6-9dea-7cafe69ef6e0"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"277132007\",\n                    \"display\": \"Therapeutic procedure\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"26782000\",\n                \"display\": \"Cryotherapy\",\n                \"system\": \"http://snomed.info/sct\"\n            },\n            {\n                \"code\": \"78151001\",\n                \"display\": \"Trichloroacetic acid\",\n                \"system\": \"http://snomed.info/sct\"\n            },\n            {\n                \"code\": \"3457005\",\n                \"display\": \"Patient referral\",\n                \"system\": \"http://snomed.info/sct\"\n            },\n            {\n                \"code\": \"413311005\",\n                \"display\": \"Patient non-compliant - declined intervention / support\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"eed4c821-2413-4528-804e-55e0581b8cda\",\n    \"identifier\": [],\n    \"intent\": \"original-order\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T06:51:55.067473+00:00\",\n        \"versionId\": \"MTcwNDY5NjcxNTA2NzQ3MzAwMA\"\n    },\n    \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n    \"performer\": [\n        {\n            \"display\": \"Fatma\",\n            \"reference\": \"Practitioner/N10000005\"\n        }\n    ],\n    \"priority\": \"routine\",\n    \"requester\": {\n        \"display\": \"Dokter Bronsig\",\n        \"reference\": \"Practitioner/N10000001\"\n    },\n    \"resourceType\": \"ServiceRequest\",\n    \"status\": \"active\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Pemeriksaan HPV-DNA",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"44550-2\",\n        \"display\": \"Human papilloma virus DNA [Presence] in Cervix by Probe\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"787724008\",\n        \"display\": \"Human papillomavirus deoxyribonucleic acid not detected\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OV000400\",\n      //   \"display\": \"Positif (HPV tipe onkogenik lain)\"\n      // }\n      // ,\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OV000401\",\n      //   \"display\": \"Positif (HPV tipe 16/18/52)\"\n      // }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Pemeriksaan HPV-DNA",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"44550-2\",\n        \"display\": \"Human papilloma virus DNA [Presence] in Cervix by Probe\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"787724008\",\n        \"display\": \"Human papillomavirus deoxyribonucleic acid not detected\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OV000400\",\n      //   \"display\": \"Positif (HPV tipe onkogenik lain)\"\n      // }\n      // ,\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OV000401\",\n      //   \"display\": \"Positif (HPV tipe 16/18/52)\"\n      // }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/115394aa-b182-44f5-9a6c-28bf219b739e/_history/MTcwNDY5NzQzMTU2MDcwOTAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 07:03:51 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5NzQzMTU2MDcwOTAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 07:03:51 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "925"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "4210ec80-ff99-44aa-ae22-2094074f9b40"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"44550-2\",\n                \"display\": \"Human papilloma virus DNA [Presence] in Cervix by Probe\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"115394aa-b182-44f5-9a6c-28bf219b739e\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T07:03:51.560709+00:00\",\n        \"versionId\": \"MTcwNDY5NzQzMTU2MDcwOTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"787724008\",\n                \"display\": \"Human papillomavirus deoxyribonucleic acid not detected\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					]
 				},
 				{
-					"name": "Kanker Serviks (khusus wanita)",
-					"item": []
+					"name": "Kanker Payudara (khusus wanita)",
+					"item": [
+						{
+							"name": "Observation - Pemeriksaan SADANIS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"13607009\",\n        \"display\": \"Manual examination of breast\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"290084006\",\n        \"display\": \"Breast normal\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"89164003\",\n      //   \"display\": \"Breast lump\"\n      // }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"134405005\",\n      //   \"display\": \"Suspected breast cancer\"\n      // }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Pemeriksaan SADANIS",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"13607009\",\n        \"display\": \"Manual examination of breast\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"290084006\",\n        \"display\": \"Breast normal\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"89164003\",\n      //   \"display\": \"Breast lump\"\n      // }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"134405005\",\n      //   \"display\": \"Suspected breast cancer\"\n      // }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 07:10:57 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/3ba95e61-8414-4835-b5e4-b762c683d0a2/_history/MTcwNDY5Nzg1NzY1NTYwMzAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5Nzg1NzY1NTYwMzAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 07:10:57 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "851"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "dcd1d175-169a-4d25-9b31-b03a25202eea"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"13607009\",\n                \"display\": \"Manual examination of breast\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"3ba95e61-8414-4835-b5e4-b762c683d0a2\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T07:10:57.655603+00:00\",\n        \"versionId\": \"MTcwNDY5Nzg1NzY1NTYwMzAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"290084006\",\n                \"display\": \"Breast normal\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "ServiceRequest - Pemeriksaan USG",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"ServiceRequest\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"3457005\",\n        \"display\": \"Patient referral\"\n      }\n    ]\n  },\n  \"locationCode\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\n          \"code\": \"HLAB\",\n          \"display\": \"hospital laboratory\"\n        }\n      ]\n    }\n  ],\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/servicerequest/10085103\",\n  //     \"value\": \"00001\"\n  //   }\n  // ],\n  \"status\": \"active\",\n  \"intent\": \"original-order\",\n  \"priority\": \"routine\",\n  // \"category\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://snomed.info/sct\",\n  //         \"code\": \"277132007\",\n  //         \"display\": \"Therapeutic procedure\"\n  //       }\n  //     ]\n  //   }\n  // ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n  \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n  \"requester\": {\n    \"reference\": \"Practitioner/N10000001\",\n    \"display\": \"Dokter Bronsig\"\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000005\",\n      \"display\": \"Fatma\"\n    }\n  ]\n  // ,\n  // \"reasonReference\": [\n  //   {\n  //     \"reference\": \"Condition/c03be9cc-6059-4cca-9c60-fa5228dcb75a\"\n  //   }\n  // ],\n  // \"reasonCode\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://hl7.org/fhir/sid/icd-10\",\n  //         \"code\": \"C50.2\",\n  //         \"display\": \"Malignant neoplasm: Upper-inner quadrant of breast\"\n  //       }\n  //     ],\n  //     \"text\": \"Rencana operasi pengangkatan tumor\"\n  //   }\n  // ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ServiceRequest",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ServiceRequest"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ServiceRequest - Pemeriksaan USG",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"ServiceRequest\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"3457005\",\n        \"display\": \"Patient referral\"\n      }\n    ]\n  },\n  \"locationCode\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\n          \"code\": \"HLAB\",\n          \"display\": \"hospital laboratory\"\n        }\n      ]\n    }\n  ],\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/servicerequest/10085103\",\n  //     \"value\": \"00001\"\n  //   }\n  // ],\n  \"status\": \"active\",\n  \"intent\": \"original-order\",\n  \"priority\": \"routine\",\n  // \"category\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://snomed.info/sct\",\n  //         \"code\": \"277132007\",\n  //         \"display\": \"Therapeutic procedure\"\n  //       }\n  //     ]\n  //   }\n  // ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n  \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n  \"requester\": {\n    \"reference\": \"Practitioner/N10000001\",\n    \"display\": \"Dokter Bronsig\"\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000005\",\n      \"display\": \"Fatma\"\n    }\n  ]\n  // ,\n  // \"reasonReference\": [\n  //   {\n  //     \"reference\": \"Condition/c03be9cc-6059-4cca-9c60-fa5228dcb75a\"\n  //   }\n  // ],\n  // \"reasonCode\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://hl7.org/fhir/sid/icd-10\",\n  //         \"code\": \"C50.2\",\n  //         \"display\": \"Malignant neoplasm: Upper-inner quadrant of breast\"\n  //       }\n  //     ],\n  //     \"text\": \"Rencana operasi pengangkatan tumor\"\n  //   }\n  // ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/ServiceRequest",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"ServiceRequest"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5OTA1NTI5NjE0MDAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 07:30:55 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/ServiceRequest/02ee3870-29f1-4cad-bd0b-a689742031fd/_history/MTcwNDY5OTA1NTI5NjE0MDAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 07:30:55 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "883"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "0f2482a1-d8d1-4c75-a971-f2b51477d58a"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"3457005\",\n                \"display\": \"Patient referral\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"02ee3870-29f1-4cad-bd0b-a689742031fd\",\n    \"identifier\": [],\n    \"intent\": \"original-order\",\n    \"locationCode\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"HLAB\",\n                    \"display\": \"hospital laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\"\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T07:30:55.296140+00:00\",\n        \"versionId\": \"MTcwNDY5OTA1NTI5NjE0MDAwMA\"\n    },\n    \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n    \"performer\": [\n        {\n            \"display\": \"Fatma\",\n            \"reference\": \"Practitioner/N10000005\"\n        }\n    ],\n    \"priority\": \"routine\",\n    \"requester\": {\n        \"display\": \"Dokter Bronsig\",\n        \"reference\": \"Practitioner/N10000001\"\n    },\n    \"resourceType\": \"ServiceRequest\",\n    \"status\": \"active\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "ImagingStudy - Pemeriksaan USG - Get ID based on Accession Number Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/ImagingStudy?identifier=http://sys-ids.kemkes.go.id/acsn/10085103|USG-00002",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ImagingStudy"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "http://sys-ids.kemkes.go.id/acsn/10085103|USG-00002"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ImagingStudy - Get ID based on Accession Number",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/ImagingStudy?identifier=http://sys-ids.kemkes.go.id/acsn/10085103|USG-00002",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"ImagingStudy"
+											],
+											"query": [
+												{
+													"key": "identifier",
+													"value": "http://sys-ids.kemkes.go.id/acsn/10085103|USG-00002"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Fri, 01 Dec 2023 07:07:18 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "1934"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "2cc6b92b-1dde-40c6-a53c-546ce3866a2e"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"entry\": [\n        {\n            \"fullUrl\": \"https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/ImagingStudy/266b2ab9-e109-4a81-8c29-275726fa8129\",\n            \"resource\": {\n                \"basedOn\": [\n                    {\n                        \"reference\": \"ServiceRequest/8a376979-8ec0-400c-98c2-552ed2097e16\"\n                    }\n                ],\n                \"id\": \"266b2ab9-e109-4a81-8c29-275726fa8129\",\n                \"identifier\": [\n                    {\n                        \"system\": \"http://sys-ids.kemkes.go.id/acsn/10085103\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"code\": \"ACSN\",\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\"\n                                }\n                            ]\n                        },\n                        \"use\": \"usual\",\n                        \"value\": \"USG-00002\"\n                    },\n                    {\n                        \"system\": \"urn:dicom:uid\",\n                        \"value\": \"urn:oid:2.16.380.31256.1.2449191199178232.20210610114926906\"\n                    }\n                ],\n                \"meta\": {\n                    \"lastUpdated\": \"2023-12-01T07:06:02.138709+00:00\",\n                    \"versionId\": \"MTcwMTQxNDM2MjEzODcwOTAwMA\"\n                },\n                \"modality\": [\n                    {\n                        \"code\": \"US\",\n                        \"system\": \"http://dicom.nema.org/resources/ontology/DCM\"\n                    }\n                ],\n                \"numberOfInstances\": 1,\n                \"numberOfSeries\": 1,\n                \"resourceType\": \"ImagingStudy\",\n                \"series\": [\n                    {\n                        \"instance\": [\n                            {\n                                \"number\": 7,\n                                \"sopClass\": {\n                                    \"code\": \"urn:oid:1.2.840.10008.5.1.4.1.1.77.1.5.1\",\n                                    \"system\": \"urn:ietf:rfc:3986\"\n                                },\n                                \"title\": \"ORIGINAL\\\\PRIMARY\",\n                                \"uid\": \"2.16.380.31256.1.2449191199178232.20210610114930875.1.1\"\n                            }\n                        ],\n                        \"modality\": {\n                            \"code\": \"US\",\n                            \"system\": \"http://dicom.nema.org/resources/ontology/DCM\"\n                        },\n                        \"number\": 1,\n                        \"numberOfInstances\": 1,\n                        \"started\": \"2023-11-06T08:00:00+00:00\",\n                        \"uid\": \"2.16.380.31256.1.2449191199178232.20210610114926922.1\"\n                    }\n                ],\n                \"started\": \"2023-11-06T08:00:00+00:00\",\n                \"status\": \"available\",\n                \"subject\": {\n                    \"reference\": \"Patient/100000030015\"\n                }\n            }\n        }\n    ],\n    \"link\": [\n        {\n            \"relation\": \"search\",\n            \"url\": \"https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/ImagingStudy/?identifier=http%3A%2F%2Fsys-ids.kemkes.go.id%2Facsn%2F10085103%7CUSG-00002\"\n        },\n        {\n            \"relation\": \"first\",\n            \"url\": \"https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/ImagingStudy/?identifier=http%3A%2F%2Fsys-ids.kemkes.go.id%2Facsn%2F10085103%7CUSG-00002\"\n        },\n        {\n            \"relation\": \"self\",\n            \"url\": \"https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/ImagingStudy/?identifier=http%3A%2F%2Fsys-ids.kemkes.go.id%2Facsn%2F10085103%7CUSG-00002\"\n        }\n    ],\n    \"resourceType\": \"Bundle\",\n    \"total\": 1,\n    \"type\": \"searchset\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Pemeriksaan USG",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"imaging\",\n          \"display\": \"Imaging\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"24601-7\",\n        \"display\": \"US Breast\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"290084006\",\n        \"display\": \"Breast normal\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"367644007\",\n      //   \"display\": \"Simple cyst\"\n      // }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"441457006\",\n      //   \"display\": \"Cyst\"\n      // }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Pemeriksaan USG",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"imaging\",\n          \"display\": \"Imaging\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"24601-7\",\n        \"display\": \"US Breast\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"290084006\",\n        \"display\": \"Breast normal\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"367644007\",\n      //   \"display\": \"Simple cyst\"\n      // }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"441457006\",\n      //   \"display\": \"Cyst\"\n      // }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 07:37:35 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5OTQ1NTQzNjQyODAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/a7052f80-33a2-4398-86bc-6c3ee85e9869/_history/MTcwNDY5OTQ1NTQzNjQyODAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 07:37:35 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "831"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "f6801f30-f810-436b-b29b-c0c822914072"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"imaging\",\n                    \"display\": \"Imaging\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"24601-7\",\n                \"display\": \"US Breast\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"a7052f80-33a2-4398-86bc-6c3ee85e9869\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T07:37:35.436428+00:00\",\n        \"versionId\": \"MTcwNDY5OTQ1NTQzNjQyODAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"290084006\",\n                \"display\": \"Breast normal\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "DiagnosticReport - Pemeriksaan USG - Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"DiagnosticReport\",\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/diagnostic/10085103/lab\",\n  //     \"use\": \"official\",\n  //     \"value\": \"5234342\"\n  //   }\n  // ],\n  \"status\": \"final\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"code\": \"24601-7\",\n        \"display\": \"US Breast\",\n        \"system\": \"http://loinc.org\"\n      }\n    ]\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n  \"issued\": \"2023-11-06T10:00:00+00:00\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    },\n    {\n      \"reference\": \"Organization/10085103\"\n    }\n  ],\n  \"result\": [\n    {\n      \"reference\": \"Observation/a7052f80-33a2-4398-86bc-6c3ee85e9869\"\n    }\n  ],\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/02ee3870-29f1-4cad-bd0b-a689742031fd\"\n    }\n  ],\n  \"conclusionCode\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"290084006\",\n          \"display\": \"Breast normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"367644007\",\n        //   \"display\": \"Simple cyst\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"441457006\",\n        //   \"display\": \"Cyst\"\n        // }\n      ]\n    }\n  ],\n  \"conclusion\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/DiagnosticReport",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"DiagnosticReport"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "DiagnosticReport - Pemeriksaan USG - Create",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"DiagnosticReport\",\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/diagnostic/10085103/lab\",\n  //     \"use\": \"official\",\n  //     \"value\": \"5234342\"\n  //   }\n  // ],\n  \"status\": \"final\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"code\": \"24601-7\",\n        \"display\": \"US Breast\",\n        \"system\": \"http://loinc.org\"\n      }\n    ]\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n  \"issued\": \"2023-11-06T10:00:00+00:00\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    },\n    {\n      \"reference\": \"Organization/10085103\"\n    }\n  ],\n  \"result\": [\n    {\n      \"reference\": \"Observation/a7052f80-33a2-4398-86bc-6c3ee85e9869\"\n    }\n  ],\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/02ee3870-29f1-4cad-bd0b-a689742031fd\"\n    }\n  ],\n  \"conclusionCode\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"290084006\",\n          \"display\": \"Breast normal\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"367644007\",\n        //   \"display\": \"Simple cyst\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"441457006\",\n        //   \"display\": \"Cyst\"\n        // }\n      ]\n    }\n  ],\n  \"conclusion\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/DiagnosticReport",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"DiagnosticReport"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDY5OTY2MzY3NTgxMjAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/DiagnosticReport/0bfdf5f5-4aed-4c29-956a-9cd0302ab58d/_history/MTcwNDY5OTY2MzY3NTgxMjAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 07:41:03 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 07:41:03 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "945"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "91f9bcb9-feda-478f-92db-0d6cdb4df73c"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"basedOn\": [\n        {\n            \"reference\": \"ServiceRequest/02ee3870-29f1-4cad-bd0b-a689742031fd\"\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"24601-7\",\n                \"display\": \"US Breast\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"conclusion\": \"String of clinical conclusion (interpretation) of test results\",\n    \"conclusionCode\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"290084006\",\n                    \"display\": \"Breast normal\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"0bfdf5f5-4aed-4c29-956a-9cd0302ab58d\",\n    \"identifier\": [],\n    \"issued\": \"2023-11-06T10:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T07:41:03.675812+00:00\",\n        \"versionId\": \"MTcwNDY5OTY2MzY3NTgxMjAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        },\n        {\n            \"reference\": \"Organization/10085103\"\n        }\n    ],\n    \"resourceType\": \"DiagnosticReport\",\n    \"result\": [\n        {\n            \"reference\": \"Observation/a7052f80-33a2-4398-86bc-6c3ee85e9869\"\n        }\n    ],\n    \"status\": \"final\",\n    \"subject\": {\n        \"reference\": \"Patient/100000030015\"\n    }\n}"
+								}
+							]
+						}
+					]
 				},
 				{
 					"name": "Kanker Paru",
@@ -9861,36 +11278,6 @@
 		{
 			"name": "03K. Deteksi Dini Gangguan Pendengaran (Telinga Kiri dan/atau Telinga Kanan)",
 			"item": []
-		}
-	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "{{token}}",
-				"type": "string"
-			}
-		]
-	},
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
 		}
 	]
 }
