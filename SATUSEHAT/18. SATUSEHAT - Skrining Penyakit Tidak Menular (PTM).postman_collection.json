@@ -11895,7 +11895,953 @@
 				},
 				{
 					"name": "Kanker Kolorektal (Diutamakan usia >50 tahun)",
-					"item": []
+					"item": [
+						{
+							"name": "QuestionnaireResponse - Part of Questionnaire/Q0013",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"QuestionnaireResponse\",\n  // \"questionnaire\": \"https://fhir.kemkes.go.id/Questionnaire/Q0013\",\n  \"questionnaire\": \"https://fhir.kemkes.go.id/Questionnaire/Q0011\",\n  \"status\": \"completed\",\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"authored\": \"2022-07-26T10:00:00+07:00\",\n  \"author\": {\n    \"reference\": \"Practitioner/N10000001\"\n  },\n  \"source\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"item\": [\n    {\n      \"linkId\": \"3\",\n      \"text\": \"Riwayat keluarga kanker kolorektal generasi pertama (Ayah atau Ibu kandung, kakak atau adik kandung)\",\n      \"answer\": [\n        // Select one OR multiple with some logic\n        {\n          \"valueCoding\": {\n            \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n            \"code\": \"QRI000050\",\n            \"display\": \"Memiliki riwayat keluarga kanker kolorektal generasi pertama\"\n          }\n        }\n        // ,\n        // {\n        //   \"valueCoding\": {\n        //     \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //     \"code\": \"QRI000051\",\n        //     \"display\": \"Tidak memiliki riwayat keluarga kanker kolorektal generasi pertama\"\n        //   }\n        // }\n      ]\n    },\n    {\n      \"linkId\": \"5\",\n      \"text\": \"Hasil Skoring\",\n      \"answer\": [\n        // Select one OR multiple with some logic\n        // {\n        //   \"valueCoding\": {\n        //     \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //     \"code\": \"QRI000052\",\n        //     \"display\": \"Risiko rendah kanker kolorektal\"\n        //   }\n        // }\n        // ,\n        // {\n        //   \"valueCoding\": {\n        //     \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //     \"code\": \"QRI000053\",\n        //     \"display\": \"Risiko sedang kanker kolorektal\"\n        //   }\n        // }\n        // ,\n        {\n          \"valueCoding\": {\n            \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n            \"code\": \"QRI000054\",\n            \"display\": \"Risiko tinggi kanker kolorektal\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/QuestionnaireResponse",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"QuestionnaireResponse"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "QuestionnaireResponse - Part of Questionnaire/Q0013",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"QuestionnaireResponse\",\n  // \"questionnaire\": \"https://fhir.kemkes.go.id/Questionnaire/Q0013\",\n  \"questionnaire\": \"https://fhir.kemkes.go.id/Questionnaire/Q0011\",\n  \"status\": \"completed\",\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"authored\": \"2022-07-26T10:00:00+07:00\",\n  \"author\": {\n    \"reference\": \"Practitioner/N10000001\"\n  },\n  \"source\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"item\": [\n    {\n      \"linkId\": \"3\",\n      \"text\": \"Riwayat keluarga kanker kolorektal generasi pertama (Ayah atau Ibu kandung, kakak atau adik kandung)\",\n      \"answer\": [\n        // Select one OR multiple with some logic\n        {\n          \"valueCoding\": {\n            \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n            \"code\": \"QRI000050\",\n            \"display\": \"Memiliki riwayat keluarga kanker kolorektal generasi pertama\"\n          }\n        }\n        // ,\n        // {\n        //   \"valueCoding\": {\n        //     \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //     \"code\": \"QRI000051\",\n        //     \"display\": \"Tidak memiliki riwayat keluarga kanker kolorektal generasi pertama\"\n        //   }\n        // }\n      ]\n    },\n    {\n      \"linkId\": \"5\",\n      \"text\": \"Hasil Skoring\",\n      \"answer\": [\n        // Select one OR multiple with some logic\n        // {\n        //   \"valueCoding\": {\n        //     \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //     \"code\": \"QRI000052\",\n        //     \"display\": \"Risiko rendah kanker kolorektal\"\n        //   }\n        // }\n        // ,\n        // {\n        //   \"valueCoding\": {\n        //     \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        //     \"code\": \"QRI000053\",\n        //     \"display\": \"Risiko sedang kanker kolorektal\"\n        //   }\n        // }\n        // ,\n        {\n          \"valueCoding\": {\n            \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n            \"code\": \"QRI000054\",\n            \"display\": \"Risiko tinggi kanker kolorektal\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/QuestionnaireResponse",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"QuestionnaireResponse"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDcwNzQzNzcxODg3ODAwMA\""
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/QuestionnaireResponse/94973741-83f5-462c-b65b-c567e7898978/_history/MTcwNDcwNzQzNzcxODg3ODAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 09:50:37 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 09:50:37 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "1201"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "0e59d1a7-db1d-4b41-8d43-0258c36679f2"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"author\": {\n        \"reference\": \"Practitioner/N10000001\"\n    },\n    \"authored\": \"2022-07-26T10:00:00+07:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"94973741-83f5-462c-b65b-c567e7898978\",\n    \"identifier\": {\n        \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n        \"value\": \"dca184ff-bf85-497b-9c79-51ea4e851720\"\n    },\n    \"item\": [\n        {\n            \"answer\": [\n                {\n                    \"valueCoding\": {\n                        \"code\": \"QRI000050\",\n                        \"display\": \"Memiliki riwayat keluarga kanker kolorektal generasi pertama\",\n                        \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\"\n                    }\n                }\n            ],\n            \"linkId\": \"3\",\n            \"text\": \"Riwayat keluarga kanker kolorektal generasi pertama (Ayah atau Ibu kandung, kakak atau adik kandung)\"\n        },\n        {\n            \"answer\": [\n                {\n                    \"valueCoding\": {\n                        \"code\": \"QRI000054\",\n                        \"display\": \"Risiko tinggi kanker kolorektal\",\n                        \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\"\n                    }\n                }\n            ],\n            \"linkId\": \"5\",\n            \"text\": \"Hasil Skoring\"\n        }\n    ],\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T09:50:37.718878+00:00\",\n        \"versionId\": \"MTcwNDcwNzQzNzcxODg3ODAwMA\"\n    },\n    \"questionnaire\": \"https://fhir.kemkes.go.id/Questionnaire/Q0011\",\n    \"resourceType\": \"QuestionnaireResponse\",\n    \"source\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"status\": \"completed\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Apakah peserta pernah merokok?",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"survey\",\n          \"display\": \"Survey\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"72166-2\",\n        \"display\": \"Tobacco smoking status\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"266919005\",\n      //   \"display\": \"Never smoked tobacco\"\n      // }\n      // ,\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"77176002\",\n        \"display\": \"Smoker\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Apakah peserta pernah merokok?",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"survey\",\n          \"display\": \"Survey\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"72166-2\",\n        \"display\": \"Tobacco smoking status\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"266919005\",\n      //   \"display\": \"Never smoked tobacco\"\n      // }\n      // ,\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"77176002\",\n        \"display\": \"Smoker\"\n      }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 09:51:04 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/56ba574e-8f3e-4466-93cb-1ee5497ceef4/_history/MTcwNDcwNzQ2NDk0MTU0ODAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDcwNzQ2NDk0MTU0ODAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 09:51:04 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "834"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "f50b705e-d1e7-42ad-83b1-c03dc6dd63ae"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"survey\",\n                    \"display\": \"Survey\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"72166-2\",\n                \"display\": \"Tobacco smoking status\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"56ba574e-8f3e-4466-93cb-1ee5497ceef4\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T09:51:04.941548+00:00\",\n        \"versionId\": \"MTcwNDcwNzQ2NDk0MTU0ODAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"77176002\",\n                \"display\": \"Smoker\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "(Jika hasil skrining = Risiko Tinggi) Observation - Pemeriksaan rektal tusi/ colok dubur",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"8708-0\",\n        \"display\": \"Physical findings of Rectum\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"248523006\",\n        \"display\": \"Rectal mass\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"300870000\",\n      //   \"display\": \"No mass present\"\n      // }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "(Jika hasil skrining = Risiko Tinggi) Observation - Pemeriksaan rektal tusi/ colok dubur",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"8708-0\",\n        \"display\": \"Physical findings of Rectum\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"248523006\",\n        \"display\": \"Rectal mass\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"300870000\",\n      //   \"display\": \"No mass present\"\n      // }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 09:53:11 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/0e4b7780-e6a9-4860-8bad-9c761e872ba2/_history/MTcwNDcwNzU5MTI1ODU5ODAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDcwNzU5MTI1ODU5ODAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 09:53:11 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "840"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "d87872e4-60b7-4f2d-92bb-1267a122543d"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"8708-0\",\n                \"display\": \"Physical findings of Rectum\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"0e4b7780-e6a9-4860-8bad-9c761e872ba2\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T09:53:11.258598+00:00\",\n        \"versionId\": \"MTcwNDcwNzU5MTI1ODU5ODAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"248523006\",\n                \"display\": \"Rectal mass\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "(Jika hasil skrining = Risiko Tinggi) ServiceRequest - Pemeriksaan darah samar (via laboratorium)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"ServiceRequest\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"14563-1\",\n        \"display\": \"Hemoglobin.gastrointestinal [Presence] in Stool --1st specimen\"\n      }\n    ]\n  },\n  \"locationCode\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\n          \"code\": \"HLAB\",\n          \"display\": \"hospital laboratory\"\n        }\n      ]\n    }\n  ],\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/servicerequest/10085103\",\n  //     \"value\": \"00001\"\n  //   }\n  // ],\n  \"status\": \"active\",\n  \"intent\": \"original-order\",\n  \"priority\": \"routine\",\n  // \"category\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://snomed.info/sct\",\n  //         \"code\": \"277132007\",\n  //         \"display\": \"Therapeutic procedure\"\n  //       }\n  //     ]\n  //   }\n  // ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n  \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n  \"requester\": {\n    \"reference\": \"Practitioner/N10000001\",\n    \"display\": \"Dokter Bronsig\"\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000005\",\n      \"display\": \"Fatma\"\n    }\n  ]\n  // ,\n  // \"reasonReference\": [\n  //   {\n  //     \"reference\": \"Condition/c03be9cc-6059-4cca-9c60-fa5228dcb75a\"\n  //   }\n  // ],\n  // \"reasonCode\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://hl7.org/fhir/sid/icd-10\",\n  //         \"code\": \"C50.2\",\n  //         \"display\": \"Malignant neoplasm: Upper-inner quadrant of breast\"\n  //       }\n  //     ],\n  //     \"text\": \"Rencana operasi pengangkatan tumor\"\n  //   }\n  // ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ServiceRequest",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ServiceRequest"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "(Jika hasil skrining = Risiko Tinggi) ServiceRequest - Pemeriksaan darah samar (via laboratorium)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"ServiceRequest\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"14563-1\",\n        \"display\": \"Hemoglobin.gastrointestinal [Presence] in Stool --1st specimen\"\n      }\n    ]\n  },\n  \"locationCode\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\n          \"code\": \"HLAB\",\n          \"display\": \"hospital laboratory\"\n        }\n      ]\n    }\n  ],\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/servicerequest/10085103\",\n  //     \"value\": \"00001\"\n  //   }\n  // ],\n  \"status\": \"active\",\n  \"intent\": \"original-order\",\n  \"priority\": \"routine\",\n  // \"category\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://snomed.info/sct\",\n  //         \"code\": \"277132007\",\n  //         \"display\": \"Therapeutic procedure\"\n  //       }\n  //     ]\n  //   }\n  // ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n  \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n  \"requester\": {\n    \"reference\": \"Practitioner/N10000001\",\n    \"display\": \"Dokter Bronsig\"\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000005\",\n      \"display\": \"Fatma\"\n    }\n  ]\n  // ,\n  // \"reasonReference\": [\n  //   {\n  //     \"reference\": \"Condition/c03be9cc-6059-4cca-9c60-fa5228dcb75a\"\n  //   }\n  // ],\n  // \"reasonCode\": [\n  //   {\n  //     \"coding\": [\n  //       {\n  //         \"system\": \"http://hl7.org/fhir/sid/icd-10\",\n  //         \"code\": \"C50.2\",\n  //         \"display\": \"Malignant neoplasm: Upper-inner quadrant of breast\"\n  //       }\n  //     ],\n  //     \"text\": \"Rencana operasi pengangkatan tumor\"\n  //   }\n  // ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/ServiceRequest",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"ServiceRequest"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 09:54:40 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/ServiceRequest/9dc50b2f-d36c-409f-a630-b130e68dd1d9/_history/MTcwNDcwNzY4MDM1NzAxNjAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDcwNzY4MDM1NzAxNjAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 09:54:40 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "923"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "7b9fdbd0-4751-4db4-8e9b-ddf250c80609"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"authoredOn\": \"2023-11-07T08:30:00+00:00\",\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"14563-1\",\n                \"display\": \"Hemoglobin.gastrointestinal [Presence] in Stool --1st specimen\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"9dc50b2f-d36c-409f-a630-b130e68dd1d9\",\n    \"identifier\": [],\n    \"intent\": \"original-order\",\n    \"locationCode\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"HLAB\",\n                    \"display\": \"hospital laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\"\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T09:54:40.357016+00:00\",\n        \"versionId\": \"MTcwNDcwNzY4MDM1NzAxNjAwMA\"\n    },\n    \"occurrenceDateTime\": \"2023-11-13T08:30:00+00:00\",\n    \"performer\": [\n        {\n            \"display\": \"Fatma\",\n            \"reference\": \"Practitioner/N10000005\"\n        }\n    ],\n    \"priority\": \"routine\",\n    \"requester\": {\n        \"display\": \"Dokter Bronsig\",\n        \"reference\": \"Practitioner/N10000001\"\n    },\n    \"resourceType\": \"ServiceRequest\",\n    \"status\": \"active\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "(Jika hasil skrining = Risiko Tinggi) Specimen - Pemeriksaan darah samar (via laboratorium) - Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"resourceType\": \"Specimen\",\n    // \"identifier\": [\n    //     {\n    //         \"system\": \"http://sys-ids.kemkes.go.id/specimen/10085103\",\n    //         \"value\": \"00002\",\n    //         \"assigner\": {\n    //             \"reference\": \"Organization/10085103\"\n    //         }\n    //     }\n    // ],\n    \"status\": \"available\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://snomed.info/sct\",\n                \"code\": \"119339001\",\n                \"display\": \"Stool specimen\"\n            }\n        ]\n    },\n    // \"collection\": {\n    //     \"method\": {\n    //         \"coding\": [\n    //             {\n    //                 \"system\": \"http://snomed.info/sct\",\n    //                 \"code\": \"129314006\",\n    //                 \"display\": \"Biopsy - action\"\n    //             }\n    //         ]\n    //     },\n    //     \"collectedDateTime\": \"2023-11-06T10:15:00+00:00\"\n    // },\n    \"subject\": {\n        \"reference\": \"Patient/100000030015\",\n        \"display\": \"Diana Smith\"\n    },\n    \"request\": [\n        {\n            \"reference\": \"ServiceRequest/9dc50b2f-d36c-409f-a630-b130e68dd1d9\"\n        }\n    ],\n    \"receivedTime\": \"2023-11-06T10:15:00+00:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Specimen",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Specimen"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "(Jika hasil skrining = Risiko Tinggi) Specimen - Pemeriksaan darah samar (via laboratorium) - Create",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"resourceType\": \"Specimen\",\n    // \"identifier\": [\n    //     {\n    //         \"system\": \"http://sys-ids.kemkes.go.id/specimen/10085103\",\n    //         \"value\": \"00002\",\n    //         \"assigner\": {\n    //             \"reference\": \"Organization/10085103\"\n    //         }\n    //     }\n    // ],\n    \"status\": \"available\",\n    \"type\": {\n        \"coding\": [\n            {\n                \"system\": \"http://snomed.info/sct\",\n                \"code\": \"119339001\",\n                \"display\": \"Stool specimen\"\n            }\n        ]\n    },\n    // \"collection\": {\n    //     \"method\": {\n    //         \"coding\": [\n    //             {\n    //                 \"system\": \"http://snomed.info/sct\",\n    //                 \"code\": \"129314006\",\n    //                 \"display\": \"Biopsy - action\"\n    //             }\n    //         ]\n    //     },\n    //     \"collectedDateTime\": \"2023-11-06T10:15:00+00:00\"\n    // },\n    \"subject\": {\n        \"reference\": \"Patient/100000030015\",\n        \"display\": \"Diana Smith\"\n    },\n    \"request\": [\n        {\n            \"reference\": \"ServiceRequest/9dc50b2f-d36c-409f-a630-b130e68dd1d9\"\n        }\n    ],\n    \"receivedTime\": \"2023-11-06T10:15:00+00:00\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Specimen",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Specimen"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDcwNzc4OTk3NTkyMzAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 09:56:29 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Specimen/7140925f-9f47-46c9-91b6-7d85c9b85b5b/_history/MTcwNDcwNzc4OTk3NTkyMzAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 09:56:29 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "503"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "c58646a1-e3ef-4ae1-8132-24fd364e5af5"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"7140925f-9f47-46c9-91b6-7d85c9b85b5b\",\n    \"identifier\": [],\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T09:56:29.975923+00:00\",\n        \"versionId\": \"MTcwNDcwNzc4OTk3NTkyMzAwMA\"\n    },\n    \"receivedTime\": \"2023-11-06T10:15:00+00:00\",\n    \"request\": [\n        {\n            \"reference\": \"ServiceRequest/9dc50b2f-d36c-409f-a630-b130e68dd1d9\"\n        }\n    ],\n    \"resourceType\": \"Specimen\",\n    \"status\": \"available\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"type\": {\n        \"coding\": [\n            {\n                \"code\": \"119339001\",\n                \"display\": \"Stool specimen\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "(Jika hasil skrining = Risiko Tinggi) Observation - Pemeriksaan darah samar (via laboratorium)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"14563-1\",\n        \"display\": \"Hemoglobin.gastrointestinal [Presence] in Stool --1st specimen\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"167667006\",\n        \"display\": \"Occult blood not detected in feces\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"59614000\",\n      //   \"display\": \"Occult blood detected in feces\"\n      // }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "(Jika hasil skrining = Risiko Tinggi) Observation - Pemeriksaan darah samar (via laboratorium)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"14563-1\",\n        \"display\": \"Hemoglobin.gastrointestinal [Presence] in Stool --1st specimen\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"167667006\",\n        \"display\": \"Occult blood not detected in feces\"\n      }\n      // ,\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"59614000\",\n      //   \"display\": \"Occult blood detected in feces\"\n      // }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDcwNzg5MzY5NTgxMzAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 09:58:13 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/f3b7f5ae-64bc-4355-a51b-fed9772d0972/_history/MTcwNDcwNzg5MzY5NTgxMzAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 09:58:13 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "899"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "692fa5e2-ddf2-4e82-a701-41ea12bccb00"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"14563-1\",\n                \"display\": \"Hemoglobin.gastrointestinal [Presence] in Stool --1st specimen\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"f3b7f5ae-64bc-4355-a51b-fed9772d0972\",\n    \"identifier\": [],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T09:58:13.695813+00:00\",\n        \"versionId\": \"MTcwNDcwNzg5MzY5NTgxMzAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"167667006\",\n                \"display\": \"Occult blood not detected in feces\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "(Jika hasil skrining = Risiko Tinggi) DiagnosticReport - Pemeriksaan darah samar (via laboratorium) - Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"DiagnosticReport\",\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/diagnostic/10085103/lab\",\n  //     \"use\": \"official\",\n  //     \"value\": \"5234342\"\n  //   }\n  // ],\n  \"status\": \"final\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"code\": \"14563-1\",\n        \"display\": \"Hemoglobin.gastrointestinal [Presence] in Stool --1st specimen\",\n        \"system\": \"http://loinc.org\"\n      }\n    ]\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n  \"issued\": \"2023-11-06T10:00:00+00:00\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    },\n    {\n      \"reference\": \"Organization/10085103\"\n    }\n  ],\n  \"result\": [\n    {\n      \"reference\": \"Observation/f3b7f5ae-64bc-4355-a51b-fed9772d0972\"\n    }\n  ],\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/9dc50b2f-d36c-409f-a630-b130e68dd1d9\"\n    }\n  ],\n  \"conclusionCode\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"167667006\",\n          \"display\": \"Occult blood not detected in feces\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"59614000\",\n        //   \"display\": \"Occult blood detected in feces\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"441457006\",\n        //   \"display\": \"Cyst\"\n        // }\n      ]\n    }\n  ],\n  \"conclusion\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/DiagnosticReport",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"DiagnosticReport"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "(Jika hasil skrining = Risiko Tinggi) DiagnosticReport - Pemeriksaan darah samar (via laboratorium) - Create",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"DiagnosticReport\",\n  // \"identifier\": [\n  //   {\n  //     \"system\": \"http://sys-ids.kemkes.go.id/diagnostic/10085103/lab\",\n  //     \"use\": \"official\",\n  //     \"value\": \"5234342\"\n  //   }\n  // ],\n  \"status\": \"final\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"code\": \"14563-1\",\n        \"display\": \"Hemoglobin.gastrointestinal [Presence] in Stool --1st specimen\",\n        \"system\": \"http://loinc.org\"\n      }\n    ]\n  },\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n  },\n  \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n  \"issued\": \"2023-11-06T10:00:00+00:00\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    },\n    {\n      \"reference\": \"Organization/10085103\"\n    }\n  ],\n  \"result\": [\n    {\n      \"reference\": \"Observation/f3b7f5ae-64bc-4355-a51b-fed9772d0972\"\n    }\n  ],\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/9dc50b2f-d36c-409f-a630-b130e68dd1d9\"\n    }\n  ],\n  \"conclusionCode\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"167667006\",\n          \"display\": \"Occult blood not detected in feces\"\n        }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"59614000\",\n        //   \"display\": \"Occult blood detected in feces\"\n        // }\n        // ,\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"441457006\",\n        //   \"display\": \"Cyst\"\n        // }\n      ]\n    }\n  ],\n  \"conclusion\": \"String of clinical conclusion (interpretation) of test results\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/DiagnosticReport",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"DiagnosticReport"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDcwODAxODM5MDk5OTAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Mon, 08 Jan 2024 10:00:18 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/DiagnosticReport/f2b9720c-3f6a-4708-aa34-378c4f4b8165/_history/MTcwNDcwODAxODM5MDk5OTAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 08 Jan 2024 10:00:18 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "1019"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "4ed02c2e-9da2-4795-825a-30cd1458606f"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"basedOn\": [\n        {\n            \"reference\": \"ServiceRequest/9dc50b2f-d36c-409f-a630-b130e68dd1d9\"\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"14563-1\",\n                \"display\": \"Hemoglobin.gastrointestinal [Presence] in Stool --1st specimen\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"conclusion\": \"String of clinical conclusion (interpretation) of test results\",\n    \"conclusionCode\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"167667006\",\n                    \"display\": \"Occult blood not detected in feces\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"effectiveDateTime\": \"2023-11-06T10:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/d76048f5-82e3-4f97-9bda-3b98ecde93f8\"\n    },\n    \"id\": \"f2b9720c-3f6a-4708-aa34-378c4f4b8165\",\n    \"identifier\": [],\n    \"issued\": \"2023-11-06T10:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-08T10:00:18.390999+00:00\",\n        \"versionId\": \"MTcwNDcwODAxODM5MDk5OTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        },\n        {\n            \"reference\": \"Organization/10085103\"\n        }\n    ],\n    \"resourceType\": \"DiagnosticReport\",\n    \"result\": [\n        {\n            \"reference\": \"Observation/f3b7f5ae-64bc-4355-a51b-fed9772d0972\"\n        }\n    ],\n    \"status\": \"final\",\n    \"subject\": {\n        \"reference\": \"Patient/100000030015\"\n    }\n}"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
