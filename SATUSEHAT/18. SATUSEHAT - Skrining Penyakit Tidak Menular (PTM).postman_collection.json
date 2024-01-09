@@ -12841,7 +12841,553 @@
 		},
 		{
 			"name": "03H. Deteksi Dini Thalassemia",
-			"item": []
+			"item": [
+				{
+					"name": "Pemeriksaan Hematology Analizer (Laboratorium)",
+					"item": [
+						{
+							"name": "Observation - Hemoglobin (Hb)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"718-7\",\n        \"display\": \"Hemoglobin [Mass/volume] in Blood\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 12.34,\n    \"unit\": \"g/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"g/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"165397008\",\n        //   \"display\": \"Hemoglobin below reference range\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"165399006\",\n          \"display\": \"Hemoglobin within reference range\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Hemoglobin (Hb)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"718-7\",\n        \"display\": \"Hemoglobin [Mass/volume] in Blood\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 12.34,\n    \"unit\": \"g/dL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"g/dL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"165397008\",\n        //   \"display\": \"Hemoglobin below reference range\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"165399006\",\n          \"display\": \"Hemoglobin within reference range\"\n        }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/9d37f90b-64fc-47df-b1ab-690e48045105/_history/MTcwNDc4MzU4MTU4NTI1MDAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDc4MzU4MTU4NTI1MDAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Tue, 09 Jan 2024 06:59:41 UTC"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 09 Jan 2024 06:59:41 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "6572"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "98ecc43f-16a0-42bc-aed4-95f4ac2ef6d7"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"718-7\",\n                \"display\": \"Hemoglobin [Mass/volume] in Blood\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"9d37f90b-64fc-47df-b1ab-690e48045105\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"165399006\",\n                    \"display\": \"Hemoglobin within reference range\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-09T06:59:41.585250+00:00\",\n        \"versionId\": \"MTcwNDc4MzU4MTU4NTI1MDAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"g/dL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"g/dL\",\n        \"value\": 12.34\n    },\n    \"plaintext\": \"\\\"{\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"laboratory\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Laboratory\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"718-7\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Hemoglobin [Mass/volume] in Blood\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://loinc.org\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"9d37f90b-64fc-47df-b1ab-690e48045105\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"interpretation\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"165399006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Hemoglobin within reference range\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-09T06:59:41.585250+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDc4MzU4MTU4NTI1MDAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueQuantity\\\\\\\":{\\\\\\\"code\\\\\\\":\\\\\\\"g/dL\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://unitsofmeasure.org\\\\\\\",\\\\\\\"unit\\\\\\\":\\\\\\\"g/dL\\\\\\\",\\\\\\\"value\\\\\\\":12.34}}\\\"\",\n    \"encrypted\": \"0852aa1551ec776abfe017be66af53633894b8360e6d7829382f24253e2d4311e45d10b2b08e38daee4c3d17f0f500b7d0463a138a108fd6160cc31aa2cc2942ad9f7ab0e4def5db4df8e41847c7167b4e3ad38a685a4a1ce9fa546a6a6d65dacc505bfca7cd0b4123158cdb256b11e98ff226ad7ff2597a01606ee0f240ddb9f7d4711001b2bd78a5f29a69e91c8c35dda82ee6a7b989eecbfaf26989481e13132c73e817addbf3b8e4572d727003041cc9a03585aab04b21223f5af73463b7269c0318f0ba75e82102681f4de6f94e8c09267c31c6a9e39803d4dcec150a6e7683896f5dd2fb43d581d0a0eb06bf0b848f696e9730ef06e66b5c9b7b6d4e4a9a132616e6b77e2a863eb749dc73c065fc25c14a0fdac9589e11e5d1d9998b23b09cde2757fc1a99cccdca08166ea6b113889cbbca15f8b14e657c585a95795632dfbb77d85b8aac994003ef99d0a6e894eb4ca3f7b4f127564d093d32bd1112dcfa8ca2fe71763ea996c09982afe72e8b4670b01b367dc207d4f91ac9ba22fd5c1193aafce8bf1a04e1d898dafa5fd5f7d383a5fed6a781f5c76847dc42ea959a9c2b3052c248207ac1c4c24e2961a78943e5384dce4f76e735506397bd1bb3886b441d800d0fbbd352abaf7d130668b8f596ab7c2c7e6c02003ae5718ff7647239fa9ddb0e1e6368549a1e8a2fa1919cdcec51b2792ab9570afe174478ecf647bd5f130b80db5ff415b783ba48e42ba4eb924aa0ed77fa657823805b7b5bf50a8c7da351aab2a00d866fa11b2498d166f8451c37ba52f679da1570ec9f96e3435cc0c3fca19a28443a17ae7290c1e245721989d8cf2e533f7f0916985a006571dcc19100fefb3401ea89aa255389cc6ce0b3bea5dfd3b429e7450c096416580e06ee4c6316d2d2384ca8c1c7cf1048f4461fa17ff6335e41a9f205f5c3f8494e7a9496437654844feef5606513cb1acf9d3f3c710590c14411abf009fde33d3dd1ce24b80212dde9074b8eaf79cf00fd5cae72a885d198d83dcfda8d00dc453e230291348b6d5eba61d810158bf627132a904f6f5dcb7dd5a7e14db193b326cb8c62c27bcb380325f0560d8e3909bdb525ad9c712b9354dd64e45d865ef45e3af3e38ee0a26aee4ed220241b03433b02400230ace7635abb3e11da8b33d524dbdcb689eb80887d1b29a34a093549b6ba66448efc28e97f41d37e36e30d0561b486a3a7848079d43b7486cf417cf81e9dcd5f9d08f054338733f8735746b6ce10935bb5904fa50931309ffa7513175bed0249d41b730459a21fb75171be252c9d3d4f295798f76d72c524c1e1c065c2638af879d2bfec6c9dd6f9918e83421c979e080a61e5af66f947eea7307b819dcbd1938c67e56f92c746fb9651e0ccdf0522cb477b106aed79a8e5cf97bc5551285e51c726edc31df6c0ec763709278da1e96a82a174b7c7fbc0b0e1ad39c2ea2881b6eef6710e8babe9bc2b9ccbe0d1e7dee2c615db04ce5326c2f7ad9b71b1b1369c107e31d6c4de81686216309c06159ff702c9c91781e2654daf0ed050abbfe4986f98cfce68e6225cd94864e693c0516206ac8d97084c8d6d5d6b6ac609e64de19f2c2e219b141187071acefae1d484e7220cba9b790861fe74c03ece5cc0fd5d3cfb46f716752f9c3e5a7897f77028e04bd898e5e1c72f03b415cc29c2e19037cdaa130c2a65b54b214e76900c183c862dac2079d59d15ba2fea74e4a0100cb8d1afe2d7f4ce083bf55b32ac20fcd2509df4eba8b923e12f6d561b1a1824316d426bbaba9587b7fc9ba805bfa58ced7d53ee962b9b9d369a570c0f56e1faa687f346ca7fbdd72024d86d3fac5dead1cdac13324e899c4aaa\",\n    \"decrypted\": \"\\\"{\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"laboratory\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Laboratory\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"718-7\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Hemoglobin [Mass/volume] in Blood\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://loinc.org\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"9d37f90b-64fc-47df-b1ab-690e48045105\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"interpretation\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"165399006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Hemoglobin within reference range\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-09T06:59:41.585250+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDc4MzU4MTU4NTI1MDAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueQuantity\\\\\\\":{\\\\\\\"code\\\\\\\":\\\\\\\"g/dL\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://unitsofmeasure.org\\\\\\\",\\\\\\\"unit\\\\\\\":\\\\\\\"g/dL\\\\\\\",\\\\\\\"value\\\\\\\":12.34}}\\\"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - MCV",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"30428-7\",\n        \"display\": \"MCV [Entitic volume]\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 88.8,\n    \"unit\": \"fL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"fL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"165455001\",\n        //   \"display\": \"Mean corpuscular volume below reference range\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"165452003\",\n          \"display\": \"Mean corpuscular volume within reference range\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - MCV",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"30428-7\",\n        \"display\": \"MCV [Entitic volume]\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 88.8,\n    \"unit\": \"fL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"fL\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"165455001\",\n        //   \"display\": \"Mean corpuscular volume below reference range\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"165452003\",\n          \"display\": \"Mean corpuscular volume within reference range\"\n        }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/73ea4b63-765f-4ac1-a374-912493fefe39/_history/MTcwNDc4NDA3MTg2NTcwNTAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Tue, 09 Jan 2024 07:07:51 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDc4NDA3MTg2NTcwNTAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 09 Jan 2024 07:07:51 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "6557"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "5470d2c6-8470-444b-9e89-fe400191c634"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"30428-7\",\n                \"display\": \"MCV [Entitic volume]\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"73ea4b63-765f-4ac1-a374-912493fefe39\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"165452003\",\n                    \"display\": \"Mean corpuscular volume within reference range\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-09T07:07:51.865705+00:00\",\n        \"versionId\": \"MTcwNDc4NDA3MTg2NTcwNTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"fL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"fL\",\n        \"value\": 88.8\n    },\n    \"plaintext\": \"\\\"{\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"laboratory\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Laboratory\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"30428-7\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"MCV [Entitic volume]\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://loinc.org\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"73ea4b63-765f-4ac1-a374-912493fefe39\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"interpretation\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"165452003\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Mean corpuscular volume within reference range\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-09T07:07:51.865705+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDc4NDA3MTg2NTcwNTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueQuantity\\\\\\\":{\\\\\\\"code\\\\\\\":\\\\\\\"fL\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://unitsofmeasure.org\\\\\\\",\\\\\\\"unit\\\\\\\":\\\\\\\"fL\\\\\\\",\\\\\\\"value\\\\\\\":88.8}}\\\"\",\n    \"encrypted\": \"4a56912096dfcb896987581377006132eee8a9c2c850c18d08d8718ec1253c2db02fa769327a06619747f7de41962061391eb9701cc87482620a80eda889719b0e46fb23d383c852c5040c8ecd0d620c9958d39a772ed27bef7888775f71bd317f6bf7dae4f4a16d5d43edebb2874f29172ab4c407ddfbf030f285e4f83f769a16d3cb3c3f8cd70c2de182922591f1e05150e9aa8f4f2f5f19534be393918c328b2f30ba16a7d367b510b04e6d5e560bc3a7cd11f5b05504c811a9a281d1f2dfa4c49331cf6ea01134c8882148033737a27ecc8d50bd16318945ec41c98122267c7bc5fd5fbcc50ef5d6bd292e8279984650a8a15712745a6a2b5574ba755d3e2590a458e8ad3641c9f62f7d246c1779dd062f0098fe0951a4a219455c1365f9eade4d8de590e8db9678eade07bc66eb719573b7e9c9c76bc6b0c877a7d5228ce9661a88ae2617996633340e4f21ec4888df74f49c76e898703b48d755a8a6d8fe15c5f1728a06e1e0107a370694a7ccfad2e230293075724357f6868f78d43fb8534ea8551ed303f60b411b447fd242a7c6ecb0b45c8370b2126be95800a8878f19a2b8b6c51d703a278096f70ca99bec1596f63fff25263333af9a0151c8358f5464d9ddba227b4f6923da459253b55b673914ff0cf954a550f7aa45bf9d2f53e7a1a2c0e3bec0cb4c9a1bc197326c4daa1ba1aecb110012a8d62be29463dafee7ac8549e6210f3354d76bbebd523ca65316469ce51e3e90149d4eb62494a5b48e0e387c6d16ca9690febc32af6e988c7d502614f2f62cc82c7ce95da9b828d347305747bfaa397501002566e31ac8a08017f18ff20a0f42c874e8123cf114824bcddabc4a0ade2e82a7247a2a2196bff256b3312c57892925dde6e61a8df87a2cd8df88464f94f72072920fd0b49de332d89285a4cba9518f7258bdd3388073f0fb11734c31aed3732965823c60306582768892c957c1cdebc4d95c57482e01d307d6ba1cddb20d82fc13d472a06e8b39a64b12353ce24300b935f7f5b9e31fca79dd9b9d3fede9891826fc995544d710d00046127b0567b4fdb63f8a6ebf79a5642107702303b3fa207b6be05d4e30cc9eed5729ed53a67de3e065a398199c4cc2efc601c52eea4d3e1e853564b72bca0f985500ac08700de3ad448fdf9907b34a431b9165f987ce7b7eeb67a6d8007f2da106f2d73561616b51dd33ad3711f1d62252ee5bcb014d74a139062ba3bb228822dc6d8851888085c0e2262a91e0ef4bdb5254d975245c264e1749427fce069ec7bbaa19b52bfbcbb2a11cedda6e837560109450c21d68d54dee5fb11ce0b18c17ff65f247a02580f0ae1eeb92e3c1bcbb7860c8c7648f8149caa484a122adc6f120bc3b6788ccfa0ebca572bc1aaf9483678cdeb8fb6f79d98e698ee2a3b0c5804044423479324006770d67fdf99d3c43c38626c27928809e7b46b0dc29fe1630dc169267bf7894a19b839836f7c9262682a9328dc787936d1fc0b6535d22ac80804ea219f4e76240ae9468e580a2ff04dbb720a956338b6246dc0ecdc7aaa2c7e7c0eaa8c825b3345fd427087169175d6ea194ebb0283d9db870085af84bf7c6560600140b5de6ee366942d0716b7f74c11356e404eb02f38c692de4c7547ec0c2d472856eda337b40d32641c69ab5f8d3172845b11b82adf160ae5e1b0727e636da42db476c1bcf9faf33180f4cf695a1ede8ed6a2dcb3ee3bb2b071af45f377ddb339be653706e32e1b0fe21472c737514bd3d5605bb3d4cf1e7dcd998c0fc221a7d004d62725617fcc746ab452011bd5f8d065b98c947c5395ff073319c31ead9e50997d9c66e5d2c74d5bb559631997246de\",\n    \"decrypted\": \"\\\"{\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"laboratory\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Laboratory\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"30428-7\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"MCV [Entitic volume]\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://loinc.org\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"73ea4b63-765f-4ac1-a374-912493fefe39\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"interpretation\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"165452003\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Mean corpuscular volume within reference range\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-09T07:07:51.865705+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDc4NDA3MTg2NTcwNTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueQuantity\\\\\\\":{\\\\\\\"code\\\\\\\":\\\\\\\"fL\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://unitsofmeasure.org\\\\\\\",\\\\\\\"unit\\\\\\\":\\\\\\\"fL\\\\\\\",\\\\\\\"value\\\\\\\":88.8}}\\\"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - MCH",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"28539-5\",\n        \"display\": \"MCH [Entitic mass]\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 88.8,\n    \"unit\": \"pg\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"pg\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"165439008\",\n        //   \"display\": \"Mean corpuscular hemoglobin below reference range\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"165437005\",\n          \"display\": \"Mean corpuscular hemoglobin within reference range\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - MCH",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"28539-5\",\n        \"display\": \"MCH [Entitic mass]\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 88.8,\n    \"unit\": \"pg\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"pg\"\n  },\n  \"interpretation\": [\n    {\n      \"coding\": [\n        // Select one OR multiple with some logic\n        // {\n        //   \"system\": \"http://snomed.info/sct\",\n        //   \"code\": \"165439008\",\n        //   \"display\": \"Mean corpuscular hemoglobin below reference range\"\n        // }\n        // ,\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"165437005\",\n          \"display\": \"Mean corpuscular hemoglobin within reference range\"\n        }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Tue, 09 Jan 2024 07:10:41 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDc4NDI0MTQ5ODc5NDAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/1a157d4f-2474-4f24-afd7-960365c1b44d/_history/MTcwNDc4NDI0MTQ5ODc5NDAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 09 Jan 2024 07:10:41 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "6567"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "91fbd5e2-27a5-453d-9b66-e67362d967a9"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"28539-5\",\n                \"display\": \"MCH [Entitic mass]\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"1a157d4f-2474-4f24-afd7-960365c1b44d\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"interpretation\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"165437005\",\n                    \"display\": \"Mean corpuscular hemoglobin within reference range\",\n                    \"system\": \"http://snomed.info/sct\"\n                }\n            ]\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-09T07:10:41.498794+00:00\",\n        \"versionId\": \"MTcwNDc4NDI0MTQ5ODc5NDAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"pg\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"pg\",\n        \"value\": 88.8\n    },\n    \"plaintext\": \"\\\"{\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"laboratory\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Laboratory\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"28539-5\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"MCH [Entitic mass]\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://loinc.org\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"1a157d4f-2474-4f24-afd7-960365c1b44d\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"interpretation\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"165437005\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Mean corpuscular hemoglobin within reference range\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-09T07:10:41.498794+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDc4NDI0MTQ5ODc5NDAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueQuantity\\\\\\\":{\\\\\\\"code\\\\\\\":\\\\\\\"pg\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://unitsofmeasure.org\\\\\\\",\\\\\\\"unit\\\\\\\":\\\\\\\"pg\\\\\\\",\\\\\\\"value\\\\\\\":88.8}}\\\"\",\n    \"encrypted\": \"d8caa54e4ad3fd2534311008d26df61788f1532328d2220d7f821c6eb5fc16ce2eb7ce6896769d489e6857e16445e7395fa1a3e8e4e4f237fc8a447974222cb18bec47d761671f585c44ed11f686f0589f9751d39fd9655d096c90d53ba2b0372bdbae7b5f6bd5ffa57500b0ffb75cae6555ab66d930c21172edcf55445d6d2cf2c8d623393b8ee03f7609806cf9e0d60f668c2bae500deecc9cdffe43af0745b4de09e421098fcbb98d645f12acc1f230ace0bf2cad3a77fe5c7cfdf285afae9dcce56b4f7b37d87e1a3a0997fd578c3df23988b9f2f35f2b4b4e8bfeb11d70ce7e7fb482e66065c55c349a124f1d2069b2d621849c275e9371706e1de16390931cf8656b9d212669a21c958b021c9b6eec7a9f3bcd70a9bf55c96d9814f378bedc3201feade4489dfbcdb32e4d1a3a45ae871cc91d21e389827e8894cd9e5ad3f10071103721eeb99aeffe14b24bb19fc242747fe7776f64ee8f920d521926ac193fc88a512073b61d267e85d766d13f7bbe32f59c1e1acf749bc105f9d626ac443faa4607b60be7f093ae77a335d2b04f3169df2444833fbf351ee99ec9a86166ef4b6e0f4cf47206519735049164fc851008b74d9aba5c208fb7390f033ad1197e1c25bd3e5e138b186e4994b52d960d26b64d60f8a6daa3d9a622e83ac33e190f8d159a4b6301f790a7514c3efbf4277f4dfce70d9734198c4b18e1ac198f0c1f39f835849f373d4459eb8d468a001627d21bbda307942213717296b2d07fc964bdcab1da6c9d6c3ebed5b059aafb3eacede59c25f6a874804c54fafc4c8938e6ea5f5da3e41887f72d82f3f306ffdf88d72e80944aa124f4a8ea7f7f4600ee8a3700ba6644724be5a48d147b7c70347e6dbca837aa40eff2969680627ec1a1faacbb530a0eed06bbe8f17d5773da0ab1f28ea2b3643abe1efaf769164227c8eae6bbfb0e95aa8294f293f1f152e1711717cc0a2d68a908fa63b81053352dd3e40236492349aa5410136a2654cd720ba29f10f5c300bea0d4faa87713c326e8d1f7cbcff7a06c04c5877ac854093ce025f6f8e74b3af3bcda3c92f7b22599c8c579a5f0cd8eadadfe30d35e82479231cdb630c029fca5d4641843c1eee96b9de2b3fe97c75976a546e5752e631f251f882c7cf8d298d5c3db363183cfd4ef559e10ad7253a9e542bf98330daecb2352ab149e64b20ddddfb35df9bbbe2ada12a8a0375dbfabd576a40b5fff907e20032f7ba7a53fbd20e945fb46071c9c8c676ce577bb446fcb690bb281feccb9185446f4a821bbe5fb55c9d748791b0bb819b3345621bda7400a07b18e0a8584e3460be0dfb7a7526c79b975e26e31e9ab1044cacb8517aa089e0dc1828930307375796aa89ec1c3e6273f670e4b8c576f632f39e06a35ad0bc67609033a475c851b7de6c9733e4743241b80f5d862a43ea6376e0a19854454ece9a6bb7e40a10c8da50d884fe9ce0fec3e78ee9392e211ac39cb4265eb732b42609a397628b96d01cd2c69fd2ab6af6a3b99498153c5052e9fa994517b6a98db112eab5393c54d47ba08a6db8a8fbfb6ecf904bc2c797ff578eb7fcfcc07490b28dd0374b9c32119476042c801522f1b55520d3b7a8e90b026575a6dbe3c1c7488db6321aabeecb0d874a23e5656b3214684701bc7bf470c7876b077d585c1af21ce0602365b6ca04b6effe228e64d6115ec1bd7e0ed3c89cd56abf4f271b1787b1b63e4c8f88cc6ad2f0530bf6fc8ee549d74ef90f683ed160890f74e2c69d3d2a9f9399dff50d0a0d3ca3d31328ba5c617f21112456ca0c7044f2dbcc9e73c9f1ba5028b91889bc94b207fcb7b5cd15d141f8d4011c2923d3755840ceb776f\",\n    \"decrypted\": \"\\\"{\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"laboratory\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Laboratory\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"28539-5\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"MCH [Entitic mass]\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://loinc.org\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"1a157d4f-2474-4f24-afd7-960365c1b44d\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"interpretation\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"165437005\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Mean corpuscular hemoglobin within reference range\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-09T07:10:41.498794+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDc4NDI0MTQ5ODc5NDAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueQuantity\\\\\\\":{\\\\\\\"code\\\\\\\":\\\\\\\"pg\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://unitsofmeasure.org\\\\\\\",\\\\\\\"unit\\\\\\\":\\\\\\\"pg\\\\\\\",\\\\\\\"value\\\\\\\":88.8}}\\\"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Eritrosit / RBC Count",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"789-8\",\n        \"display\": \"Erythrocytes [#/volume] in Blood by Automated count\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 1.23,\n    \"unit\": \"10*6/mL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"10*6/mL\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Eritrosit / RBC Count",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"laboratory\",\n          \"display\": \"Laboratory\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"789-8\",\n        \"display\": \"Erythrocytes [#/volume] in Blood by Automated count\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n  \"issued\": \"2024-01-05T07:45:00+00:00\",\n  \"valueQuantity\": {\n    \"value\": 1.23,\n    \"unit\": \"10*6/mL\",\n    \"system\": \"http://unitsofmeasure.org\",\n    \"code\": \"10*6/mL\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDc4NDQ2MDk0MzY0MjAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Tue, 09 Jan 2024 07:14:20 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/ef8e9424-6541-48ff-bfdf-7e16424fcda4/_history/MTcwNDc4NDQ2MDk0MzY0MjAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 09 Jan 2024 07:14:20 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "5894"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "90e06073-a16b-44b5-95cb-2f2fc678a6d7"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"laboratory\",\n                    \"display\": \"Laboratory\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"789-8\",\n                \"display\": \"Erythrocytes [#/volume] in Blood by Automated count\",\n                \"system\": \"http://loinc.org\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-05T07:45:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"ef8e9424-6541-48ff-bfdf-7e16424fcda4\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-05T07:45:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-09T07:14:20.943642+00:00\",\n        \"versionId\": \"MTcwNDc4NDQ2MDk0MzY0MjAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueQuantity\": {\n        \"code\": \"10*6/mL\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"unit\": \"10*6/mL\",\n        \"value\": 1.23\n    },\n    \"plaintext\": \"\\\"{\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"laboratory\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Laboratory\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"789-8\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Erythrocytes [#/volume] in Blood by Automated count\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://loinc.org\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"ef8e9424-6541-48ff-bfdf-7e16424fcda4\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-09T07:14:20.943642+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDc4NDQ2MDk0MzY0MjAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueQuantity\\\\\\\":{\\\\\\\"code\\\\\\\":\\\\\\\"10*6/mL\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://unitsofmeasure.org\\\\\\\",\\\\\\\"unit\\\\\\\":\\\\\\\"10*6/mL\\\\\\\",\\\\\\\"value\\\\\\\":1.23}}\\\"\",\n    \"encrypted\": \"66f68e0b716303e2863b52bc96bc43909ab9d432e6d2bf1c75028138e34d1bb74577047bce2acc94d085a87954091d4963ceb95bdd23a223078de24ecc5191867c52ca0d5f2466ef2da4c11ffc8517f12292536a808252f97736075c9a2d3f0564dec4124f9e129b7f1f562d57daba009a7659ad1089bdea723f250d7d75003ea0a1dca144b0991b08a21e0ed7446755f67dea482de64a656b053fcf8ac556b22c130f72afd9992000451e02797189a8f5715417cf76c7b6aa40dd5943d40d677fbf9a7b15ddaa9a70a30abb98e04aec6d7df0c236873b6674753dee2b77202955364914fdaf1f20b5855b8fb6f43fba256849a16ab78504f0ed8cedb74f8b330c1e5b41c077d520b4f06e29c0222e56a64b2c4a6206c720ab8e4e152fe64986f2ecdfecff967ee5c58ce7d691217a02c768b47ee74b3248fea571e20bdcd7dfbd1f61d248963720d5cc95cb955f65127b08f2855d006b95d9fb63edeece3bf4c0e883ef5d4c2fda5c671852b41e55449464061cfd6a4bf45ba3e25b5a23e599c3cb930f09ac2190d52bbc36ae7cec39574abc274c6ab2c18fb0cec23d8a1037bed11e60e2a39af9f593647c888e2f18cf2bd19cf743a6d09bebd707f1cb331dc0d790c77c8faa7845c87dbfd4410ee1fc5abde7215737664ed3a1a877cb8cfd8c057082ba3299e6bb084108b6b881e23e452254bcc8a3c2d0e8fd4d481dacb1360fa786a0b981732ea730e6f0eaabaa5199099f4bc8bdbd019ece854655f5e205083e2c33e7abde3227f8656d0e2681cecc0b777c912482347334a975ea8f514c25dceb5a3048494074302a406b66390e38ed0ce07f4bccc7ca4bc9265849781608bfa0303666d541c43fb0e07d834b9ad84673fa5a87e63bdd2670fd199921ac25527b78dfabc71b298ec584e4d3ae1498a21fb1cf97a5b330193067dddceecea839274cc665674b090e4d12f3aae73035811fc9fe68f4210a207d9f68beb2825f15fd7ca916482cc4dbe94582da39a503ef3b776855acc772dd0310c21ae259bd22c1adbf733ee0face22e1c92d2306958bd92ccf2a76567f9f499f1637cc8526cda57c6029a8bb2f693a13573fc2b1fc6bff81a3a8f8e13f07d35cdba88fb9fcd4540beedd1bef04fa651bd4c93cbb827a7b0401d73e34cb0a2e8a1c483328910bd789f2ff2f9e4295eed0f7e79321a784cd35327b21d5fa4b988e1a242fa7f5699956f29b0671dc64fb4795e30c041cd22efccf0433aeedb8330912feeac7580233ee269993d6bc9b36de5c77978b2ee5d668f7b9e92dffa0b60adcc6d5ec9f4b3ee238d363a67958fc0bbdd5380efb7c77bf52c79c466ea6c5933e5957b28201209576b3f9e3dd334758c6b73628b0b96d4bc344ec647d544516c9a4f9e3c50d2fab34faa681c029e3a89fc2ab185a2e09f9164a864d8eb60754af77a0922cdf37c974b5f2342adf7e475cb3bd978861ce7b01416be68d2ebddba15a270e3645d35150dc876ba0aeae97bc1bfd63dda30ea8a5aff1824a4dbd70df376b90f3e8bc03d9e9e9b3d3d3d678ede6682caaca1f9d9ad1db5a24d79028f21d0b598d966c1932b61f938ba5aa14a53f398b4132e5fefccec2d91f5281a36425fcfe75b4c2dd24732b7474325626a478ea57eed63e742cad9ca7fe6ddd8a92ea3a07c64837b0e0b0e162ad35a8dc\",\n    \"decrypted\": \"\\\"{\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"laboratory\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Laboratory\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"789-8\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Erythrocytes [#/volume] in Blood by Automated count\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://loinc.org\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"ef8e9424-6541-48ff-bfdf-7e16424fcda4\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-05T07:45:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-09T07:14:20.943642+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDc4NDQ2MDk0MzY0MjAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueQuantity\\\\\\\":{\\\\\\\"code\\\\\\\":\\\\\\\"10*6/mL\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://unitsofmeasure.org\\\\\\\",\\\\\\\"unit\\\\\\\":\\\\\\\"10*6/mL\\\\\\\",\\\\\\\"value\\\\\\\":1.23}}\\\"\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "03I. Deteksi Dini PPOK (Khusus usia >40 tahun dan merokok)",
