@@ -1,11 +1,11 @@
 {
 	"info": {
-		"_postman_id": "03aab50e-10ca-4547-a176-fc636d1be593",
+		"_postman_id": "b9218d32-f451-4622-be57-d835e23aa1c4",
 		"name": "18. SATUSEHAT - Skrining Penyakit Tidak Menular (PTM)",
 		"description": "For **complete repository for all SATUSEHAT use-cases** please access our public workspaces : [Postman Workspaces](https://s.id/PostmanSATUSEHAT)\n\nFor **detailed SATUSEHAT use-cases import link** please see : [Postman Public Kemkes Link](https://link.kemkes.go.id/PostmanSATUSEHAT)\n\nAny information about SATUSEHAT FHIR Profile could be accessed through [Simplifier FHIR Profile](https://simplifier.net/guide/SATUSEHAT-FHIR-R4-Implementation-Guide/Home/FHIRProfiles?version=current)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14543449",
-		"_collection_link": "https://sid-indonesia.postman.co/workspace/SID-x-DTO~2a164aa8-f244-4d7f-9bfd-d9541ce4af90/collection/14543449-03aab50e-10ca-4547-a176-fc636d1be593?action=share&source=collection_link&creator=14543449"
+		"_collection_link": "https://sid-indonesia.postman.co/workspace/SID-x-DTO~2a164aa8-f244-4d7f-9bfd-d9541ce4af90/collection/14543449-b9218d32-f451-4622-be57-d835e23aa1c4?action=share&source=collection_link&creator=14543449"
 	},
 	"item": [
 		{
@@ -16924,7 +16924,1551 @@
 		},
 		{
 			"name": "03K. Deteksi Dini Gangguan Pendengaran (Telinga Kiri dan/atau Telinga Kanan)",
-			"item": []
+			"item": [
+				{
+					"name": "Curiga Tuli Kongenital (tuli sejak lahir) menggunakan alat Otoacoustic Emisssion (OAE) dan Automated Auditory Brainstem Response (AABR)",
+					"item": [
+						{
+							"name": "Observation - Telinga Kanan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OC000150\",\n      //   \"display\": \"Curiga Tuli Kongenital menggunakan alat Otoacoustic Emisssion (OAE) dan Automated Auditory Brainstem Response (AABR)\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"95828007\",\n        \"display\": \"Congenital deafness\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kanan (Code not found)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        \"code\": \"OC000150\",\n        \"display\": \"Curiga Tuli Kongenital menggunakan alat Otoacoustic Emisssion (OAE) dan Automated Auditory Brainstem Response (AABR)\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "967b96d1-6106-401a-9d16-bb8006eb0f01"
+										},
+										{
+											"key": "content-length",
+											"value": "289"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:20:44 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resourceType\": \"OperationOutcome\",\n    \"text\": {\n        \"status\": \"generated\"\n    },\n    \"issue\": [\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Code not found: 'OC000150' in system: http://terminology.kemkes.go.id/CodeSystem/clinical-term (RuleNumber: 10010)\"\n            },\n            \"expression\": [\n                \"Observation.code[0].code\"\n            ]\n        }\n    ]\n}"
+								},
+								{
+									"name": "Observation - Telinga Kanan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OC000150\",\n      //   \"display\": \"Curiga Tuli Kongenital menggunakan alat Otoacoustic Emisssion (OAE) dan Automated Auditory Brainstem Response (AABR)\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"95828007\",\n        \"display\": \"Congenital deafness\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/597027c3-dd48-4701-8663-1ed62896bfbc/_history/MTcwNDg2MDYyNDMxNjI4NTAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2MDYyNDMxNjI4NTAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 04:23:44 UTC"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:23:44 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "5880"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "f79e11e5-35b6-43ac-bec3-8d0e1974a6e7"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"25577004\",\n                \"display\": \"Right ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"95828007\",\n                \"display\": \"Congenital deafness\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"597027c3-dd48-4701-8663-1ed62896bfbc\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T04:23:44.316285+00:00\",\n        \"versionId\": \"MTcwNDg2MDYyNDMxNjI4NTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueBoolean\": false,\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"95828007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Congenital deafness\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"597027c3-dd48-4701-8663-1ed62896bfbc\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:23:44.316285+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDYyNDMxNjI4NTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\",\n    \"encrypted\": \"e25110952e1c818a177b8a7ba4e2a98d16855e99b649f633b4d156de822be8ab197bdabf6110747123645b363af97dc19f8bac6dc5411c5ae06695c6c771db23090a5e0f3c2fd119c97de6ec0a386d1eca87789944f70f51e3876ca7919e6ec1760c62c3f5581f318dcc9c154938e1b86626c8e7835aabe68f81a4df14ab60d63f7934f242814a3287583b351901f568838a3dce1ebf5c6637fbaf61ed6616a3416b42e7376562059121a24e2ff15cea0cfb8d1b68db260556d83c74766258b5c6bf18a76fa1c2e37a1a0050f87a820594974e19504cf3a684e00b943a96abf279c83937fa5f345726cb409a49dea443c37f722bad190ac65ec39ec983d7887f5db4873a5efc9e4f28ac8c8776794b11b11351147f2faa9b674a96e637b5448e3d41a75595ccfe9c069ff9f2ded9cb1d8836f5835205460fc4931342cbce27e31df57620f83f83dd9c305aef0d8785af9ed8e0045bc28580641d79143a8d5b436b4dbf368815c393f4f00726acf665a8281a777ec414c06a717aa6d78108282d0984a9048bfa3abafc0a297da94a2268662eae3783f6ded2d50b718d81594a955bc722bbe7191a19dbf46527c07f069cdfe00e693a1f50f498966ff9195478fb3b5330df04c3602e48a59fd027082a7ecaf5c56f12bdbec13e3eadda2a36523e88dfd504103ef8ac56a59a950ee938c3ab4b72102c671c353ff831d5213f8fc506ed6cb90e0f86b94c9f6be065355abda9f4c923d53b2144d2011f4f8c62ca77080ae58f0dd6eb36e071513fe16763756c11a8cb1f97063884ba0cbb46be9e816895c8dd0c20fc75784f5fee630c6a082f37ea425e50d54b83ed10822214f76e0f8820c19e69a06c1c55e84cde402deaf60f6c8dd153d78ce113ff945d5ad62962d6b5abd8f6330106bc870ab30f1374074bc685f5cfc5d6f29da2158b0db70dad2b4102e2f9f058e79f22d29f0b72aa344939ae6579fa446008c9d35a4b3b117ebcaf2b7b2a17e291c7a991e1dcf7c776f258cf28d5e999d2ced9e0f9d1aa89c4b55b122452c2129371316ab2ab800e464e927acb68fba597d26ca5379d78e6f2770f02bdf9bb672d65c82887185f7f6afd3a04a0ffbe2a4cb0d4be0797b2727791ce54133129d2cad605ecd651e1f15516cd9d1dda173bff3c295b1a93a3f8cdb3022709ad88762f23181c611c18385770a17988f3d1b4d1c1f4b14772af10254e1385028b2e786fd91421b98a31f6354f5a8bd22f611e6d9dbb9cc588504f6b056345d6506e022bc40a9a46a348f613ba201b68e91085af1c260e8e10064541632f4d1eec4a18dc7c13468105846591699fd5c773ac329c755cd54433ed047b2ed5b9b1efec8f8e3a3a691908d5ea374f5626d0d4e039ccf751eb15f2becfca0ad932ffc84c79ddd5f8178ac9f4f92855a13742165939627b2e4bc4ffdc70126a4c249fff80102dbdcc416b31e8be06000f0d3e0f0cc545e1158761059dec1cc69bb84a6c34818ae1225fc5a23ba5009b6c134c7f65da2dbe351ec8560daa141054878c1ea208488f957f4c961135a00473d71156bb5a17aa19b0511d933e0f07c141be2be4cc3621d5b2f0a30bcc00ab4c502a4cc224b60702d50780ec40c613ea7e977869746cfbfde87c01ff149f7f47f0061ba643292aced148cc78acc9c4b88266a7ff112e\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"95828007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Congenital deafness\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"597027c3-dd48-4701-8663-1ed62896bfbc\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:23:44.316285+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDYyNDMxNjI4NTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Telinga Kiri",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OC000150\",\n      //   \"display\": \"Curiga Tuli Kongenital menggunakan alat Otoacoustic Emisssion (OAE) dan Automated Auditory Brainstem Response (AABR)\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"95828007\",\n        \"display\": \"Congenital deafness\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kiri",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OC000150\",\n      //   \"display\": \"Curiga Tuli Kongenital menggunakan alat Otoacoustic Emisssion (OAE) dan Automated Auditory Brainstem Response (AABR)\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"95828007\",\n        \"display\": \"Congenital deafness\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/eabda9aa-5d78-4ff0-ac01-127d5d5b3e40/_history/MTcwNDg2MDY5Mjk5OTU3MzAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 04:24:52 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2MDY5Mjk5OTU3MzAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:24:53 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "5875"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "5fd1d0f2-df99-4b7b-879a-eb134820c0c1"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"89644007\",\n                \"display\": \"Left ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"95828007\",\n                \"display\": \"Congenital deafness\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"eabda9aa-5d78-4ff0-ac01-127d5d5b3e40\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T04:24:52.999573+00:00\",\n        \"versionId\": \"MTcwNDg2MDY5Mjk5OTU3MzAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueBoolean\": false,\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"95828007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Congenital deafness\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"eabda9aa-5d78-4ff0-ac01-127d5d5b3e40\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:24:52.999573+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDY5Mjk5OTU3MzAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\",\n    \"encrypted\": \"99f9292fcb3a4f8657435edfa21c4e301e36961f8573cb473dc23ee09690276d9e6aa7bdc05153560784759200346dae43536e5c6cfa55d8709df28e9f78fa930608cd240c3cb38a107e01f9cd108b7a4c3666e4f15b18426ff50eb0afafc5f02fbdb1cc229291a8f72004a34b2fbc4ef76c30cee5e57ed35494734dff2c3c67dde5e6f919496ad84798415b2c602709c8c09fe0b445ddd0eb7415350786f4f491a879a966a7badfa6c204d53ccb9d09270f0743d444d78b8f4f15db7708f21b9d697cb9c6352067e2f15cd6b2b48cd0c1f519ac5e3fcd75ca36a6ffe9dc9000e3a941bd922582cd8d2fe1bd098ca6f8e2aa21269d59f248a40c07c3fe648bf8ae9c9f8383a875b3a78da5d11c76297da41d94e861e09971580b9c0717b7a842fffac768c524c34df96f86ab3e16fc8918f2cebd98b59fd9166ffb17bd37d21c4927d7743a90cc8bd03470b91f6899f4addb342a49c1db201e4fbf8c1b3702a727959466c7000430fa5f87e574b37a084f14b39c36fce4f03657fccfeb571e81fd2f003df19b41a60d5f8a9f30813c8f830675b0093db4b57c6d27329af13144e94ca34cdb9ca8a027da504bd202513d8719a13df85a93e49567e412ef6bea9cfbdf70b81e25f95ad87bb76518d4f95f857576119ae6a3cd42c81f9c72f3dd2c70f8e59caca099282f575c700bccb23ec449e496ed7d0ff5e714e5a19aae2631da943d7df8706f1df91826c709bb042532d79ac26a000a5f122ef1372b9d33075f218105fd5e6cd630fc1468f3e3f6b4ecccb2b1f8400d7397c495486fe4fe18e3e3ef523da11d252bc27a04f43daec4bc2cfdebd3f9633c34d3a120fbd343e31c21f1116ce5a211a93b9958b03212db04f04ad62671317da447fe5a428d93c7544dd6924f44805a8537d2d9d5a618b2f0b458aedcc3ac362183ad88173dc9b386244470d1a68b1f39d36f97176461f4cd4cdedf28490fc3619d6007cc802a845860613f51ced3b419bae50265e6d542261eab122bd7d9640147efcfb1c0478d15e5f0e30414fe74e8457e390a42aedf8d2e9a5c75868485f07234c7eff78cac589e7322499ee9b556be988708cb13e991c06ee5b4e23fe38a8783b72b7f18ce2dd53e1f6df24077968e1c8120fd35508f26c123a0609c43c0fe4f2265c0e1859f845ec71061fa2c7e95605c04d9f3c10c3c81fdb2918c1154c6010154c274c4d670c9ca9808d43693b114ca1fa37571c81b90204fd87aa5749ed0e87e9a78a6d40322382ab69f940579e7af80590425d7d979138140763ecfa4f44464e5d7e64b6690a5c6cbd55b92659fe7977be2a303cf053280d16817f23f8f5dcb42dcf0ad23ccf39dd1e0322b6221fa18134c8d6ebe9cbf4c8bb09c8bc14c53d0f8ae658ea64d13bf0b71e479373c8b64f7966f88bd78599f14c5ec8583307f8020845ab870964dbe911c00bb106f699cff7333d9ae8d89463972a6dcf299886ba5c980114b0d3fafd62f32ea31d27146dbd33c120de318290237d51e570c33bf2d6e3458a299f15d3303e624bf39458d44fd5b04968b15089c110325715bc569469cd849289e98abe37cf0f2bbfb7c9580da69de8a2f7b9d70a55ccc853d839e5390d56f58a7f3d7a1f6d280e2e6df6eaf082e77fc2b1831a0b6970ccd116438f3f5f22d549436fbecc191\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"95828007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Congenital deafness\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"eabda9aa-5d78-4ff0-ac01-127d5d5b3e40\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:24:52.999573+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDY5Mjk5OTU3MzAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "OMSK (Otitis Media Supuratif Kronik) /Congek (menggunakan otoskop/head lamp)",
+					"item": [
+						{
+							"name": "Observation - Telinga Kanan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"1091181000119108\",\n        \"display\": \"Chronic suppurative otitis media of right middle ear\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kanan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"1091181000119108\",\n        \"display\": \"Chronic suppurative otitis media of right middle ear\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 04:27:16 UTC"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2MDgzNjQ3NDg1NzAwMA\""
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/684b2c89-ff46-4490-855f-5e3408769165/_history/MTcwNDg2MDgzNjQ3NDg1NzAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:27:16 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "6085"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "7910d03c-6536-4ec8-be81-a48fbaf895fe"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"25577004\",\n                \"display\": \"Right ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"1091181000119108\",\n                \"display\": \"Chronic suppurative otitis media of right middle ear\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"684b2c89-ff46-4490-855f-5e3408769165\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T04:27:16.474857+00:00\",\n        \"versionId\": \"MTcwNDg2MDgzNjQ3NDg1NzAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueBoolean\": false,\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"1091181000119108\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Chronic suppurative otitis media of right middle ear\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"684b2c89-ff46-4490-855f-5e3408769165\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:27:16.474857+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDgzNjQ3NDg1NzAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\",\n    \"encrypted\": \"1b612986e7d05ae1e6fe68b812d7bde21e9b2b18bd0002dc3e4ac970babe00ec882f920e67ea9b4e04a1b182ddcedded3148c58e5db6063fd833ccfff92a2dfbdd302d8109a1e82227cd922f5d3d65fa03872d77e23e82bc7981f1cbbc72a32353a5b603fe797d18e63e76717e257bfb199fa72df176386580cecbaf72b21fe3fc5dda8e575909001110a224d7531387576c57691c5fc6aeaf0e7413315ef77d911aa1c4ce89fc8374d697c82b3cadd8ea9bd7a439f56889661b899d0b1a76be465a524bee34f8a4b1ea50db9949beac429e440c3c3aca1a6b110de571670823bc105a26aeb13339dd6ea3b8bea4cd0b2fb8d15bc2d666993bff18617fe19d3eefc269399a3efdd57b3bce01e86e8db46af689087782a96e4d4feede6807ce3a186efede98a2b5747a1863985ff6b411b3babe2fd6c7cf66262a56fd2befbf71f23f5e268c32d22c5a4f21a13e18d767723eece574f96d0e722e064f76a9043f508d55e19947feade7e3b397abb5903d6f16dbbae3684ee95475d09f84bb6ff9c553f89c34d0399f27a97cd637f6cd54d0518d42167ba320955547a958cdd59b993545c0c3c3709bb52d41eac4847bab54ed0c79ff453f08a5327b73f05b352415f6633488c20240ee4bb76035d0e144cba5353ba722b57cf3562ff4f23bf31ba26043d9725f242e83821ac0897867bbb31726e88256cdd2bd41f9bf8f009bb0b69308350b6d39b2bac402e4b0e0db58a66fc67cceca531e3d2dfef0c612af518b41d28bcd1193dbb0a89d9c00aa1880c753bba91328fd37407ecf23a9b0b625715b1bed3793c6b238d523ad015778172e3fc9145de6e6a999c56d15304b53297cc0892faf512b4f851556175b80eb423ea285c61f5e663a273404a58a1d72c25fb337cd507b99fe87a5a82b2177c8aaf82cec740e89bd1507907e59a693d65d00c729b71212f454b917ea50094cb9daad81f3cb4dcc44af462d1c9bf35887223dbe16fa8b2d58a244ccb8f5f32f1ae5132eef217ee3d819a35f30a939449cdda84135815a4dbeaf09c2dd68fdd10d3333b5e74f5098647cf97d871885522bf2ea1525168be901e6d4f675eadb64761cd247fd08f8a55753ba2e62c3209291ccd0a18c35e0567bc0e001428fed4e9a0e7e60fc4ee9bc84b2c0c5829802f92443e639461f990e85a6a7776e0663646bf6ac160805aaf438f4a455d96de81bee62eaf72deb2ec1ce196fe5a3a05986986dfec643e9b97b8f2a35399ae4e78d5fb20729c26259756c8897e5e7b15884ea321916587bfb82cfb33181b17a2a1528210026fa250435c3a93ac56f0ff8da63293157851f08255c90f8dab40598f362ff5c8322db0ea0993f7e4a055ba66e5b338787846a06471b12e091e52c04e7ddb103ced3a624435156a0f5e0d2ed98cf1c162a4540071a4e9acfbf7353106de84c4728b95e8972bdf0bcca426ba6e89ec7391fa5ee66cd7ee9f7cc340f9910e493749d00bc096468f7e6252dfa8dc7ea97c835c736e887f195ecba7b7b08a9109b0dda2c1bfb63a048e417774c319badb2478e816bade279f4fbbaaae25cb22b50bbde964b258c3c72a066dc3d7866ec36a2fb974c5572138c6102c25536b13b61418a2ed2038cd911da352c1d3e7dad6f487644e880a73adc853b7048146df37b765ac5bd0f0f00df1b1b1ef20f705292d1a9c02c54f9167cd724d573a59a3656d64cb007e79dc5867215a2ea185707b88550\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"1091181000119108\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Chronic suppurative otitis media of right middle ear\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"684b2c89-ff46-4490-855f-5e3408769165\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:27:16.474857+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDgzNjQ3NDg1NzAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Telinga Kiri",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"1088571000119107\",\n        \"display\": \"Chronic suppurative otitis media of left middle ear\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kiri",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"1088571000119107\",\n        \"display\": \"Chronic suppurative otitis media of left middle ear\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/8128c5c2-c821-4854-830f-57dfdee79fa1/_history/MTcwNDg2MDg3OTAxOTM4OTAwMA"
+										},
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 04:27:59 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2MDg3OTAxOTM4OTAwMA\""
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:27:59 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "6075"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "e16cbc81-91db-47b2-a04e-404c8614045e"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"89644007\",\n                \"display\": \"Left ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"1088571000119107\",\n                \"display\": \"Chronic suppurative otitis media of left middle ear\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"8128c5c2-c821-4854-830f-57dfdee79fa1\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T04:27:59.019389+00:00\",\n        \"versionId\": \"MTcwNDg2MDg3OTAxOTM4OTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueBoolean\": false,\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"1088571000119107\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Chronic suppurative otitis media of left middle ear\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"8128c5c2-c821-4854-830f-57dfdee79fa1\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:27:59.019389+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDg3OTAxOTM4OTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\",\n    \"encrypted\": \"3118b59b265c37c6dcc23953e03496eaddf5fc40f1d82c5f55b4c40f9ee46b155a02f02e2bfb790866c54fe84098891e7c6005e7c57208f4855caddfa3fbaaa065d46c5a084fed692e58647b5b7f9d6be55d8526cec8cb283dfd6411c2ad2b1712adce3d9d4365ce38db138780de9cf09706a10f993cb749cd6b96985ca58b263906643efc2dee31b1a06667241f6af2f66347870d7439ed688d613a7acf5b4b38d536c50eca568de4b3e19961a92953a84e355065f80ed697701ee22ba818d4b6d22039a79751cd1e2e6e4df58741d925d1122fcbefdad8ce74bb60b6392729df7b6422382dbb5086157d983ebf364a50a8fe29de3443cd01784d08e2eef2fa69b3b7f4de5212f170f779232a47290db10f950c318ffa81b3f503a117e68d2ba2080d7129db16dc211d215ea70056f6a425214cf9a2b45af6d8ff584496bbfc29807932651c84c04f5d87f9da6dc53c088d7b6596297eb1b260ee367480790f4a525ae6a6a90e2300634faefa385fa1e14717fac74db61d5f3289d3180392455dc7d28411baecd1e591152476580ba0d33403291acdaae04ffa4a1c8e7c9527b1940cc194ad5ead65a3fce723cfa4b3ac5334ceb0f3eb146d489471175c3fb99e76d5e73faac2f052af463273812c2b0a057d7008f530944534edffd62ef14ce0eccffe653d27b25fcab44ee55e8f3f916a189f215db115cac614f1fe4264d95fafe22bb72acdb07658bb007b362be575e542cc9a22fee89a3a71053c5b02fe6e6f95246babc61ca6139cb4d632959c50bdcd295e32b407d3a6bfde79eed7f985830d1540fb6a02cf90d1effb60502fc160e2536d52e879b5cf1cdda44fb5eea7d0b53e5ed8cb5b16a1cbb061c190dab6b4cc73d3cb9347f1ab4f5482cca10d47b7839a6e52e13d35570a01283c466a9eb3c497498cfd3685edbe2590a1a7418dadb50d345a8e84f1c833f17e7fc558f5dfa5b71c8fee9a2bda3acf481073956c0540409ed3f91f0a8bd5a2aa00e38ae5eb7cd65d189988fad085d4d1fba0197ad36094a7f2ec7528870a9a025632b9b3d3f12e17c9d834984bd41307b1280df9c0238e85c3d3c0b52212d62fa837c7a783aed2a633e7aed2d17902110ea86a9291f400a75f9c6a4f6626a2e32cab7095c22003991e4359f8f6ba22f391495534f21a8e9aa9690e07306fc86f48977f0128db490547b9b1f67f06b3f143bc2bc44db702fb0a22ed01814db05eb1f31ea2c5464ddcf40d13c40d390fe355d4bd9552fd94e449bd6734f3677ab30372200f194a248e509f58a77ccce38f9750058270515aa3c6888a85350d7f01f0b8d0410869a3ee77643c09dd8239177cb4e4076f10b2f4a31986b645eb9aa1c417baf2abed0bd1be93cc2f06a782af0d0f365d971c758684640f0f1ea7d24068b4d17926823351448a0f6c3f030e236fc35a1940c8ed668dc42ab1527444023deb09efe07ca5b6c430cad3e4af8e43d508573be29949e152bdced450f818cd8e27b37fb936d7671d696f180d4e1757c9eb39cf8fdda312d8c15cd2f77e67fe59b9b1302d1b91b68ac10bd4489f4632354b365a3aafbe9f4d288e23fe4c248f5c71ea973f16a1faf6b55e7f7c2c22a9004cb639e811d44e5915af228ed8f7f2ff485c6db9b7b9899e346024bb906e523b5332ae01ffe446665b66182ebd25305bf5f3cc2de10ed8745f73fd69087a67e974bd1560a669325de9ba13762476fa7f9a40\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"1088571000119107\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Chronic suppurative otitis media of left middle ear\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"8128c5c2-c821-4854-830f-57dfdee79fa1\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:27:59.019389+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDg3OTAxOTM4OTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Serumen Impaksi (menggunakan otoskop/head lamp)",
+					"item": [
+						{
+							"name": "Observation - Telinga Kanan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"18070006\",\n        \"display\": \"Impacted cerumen\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kanan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"18070006\",\n        \"display\": \"Impacted cerumen\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 04:29:26 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/d6a67660-cd57-4efa-8b1e-07221a352ebd/_history/MTcwNDg2MDk2NjAxOTc1MTAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2MDk2NjAxOTc1MTAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:29:26 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "5865"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "9cc6c7a8-c62b-426f-bdc7-082be99b0909"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"25577004\",\n                \"display\": \"Right ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"18070006\",\n                \"display\": \"Impacted cerumen\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"d6a67660-cd57-4efa-8b1e-07221a352ebd\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T04:29:26.019751+00:00\",\n        \"versionId\": \"MTcwNDg2MDk2NjAxOTc1MTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueBoolean\": false,\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"18070006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Impacted cerumen\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"d6a67660-cd57-4efa-8b1e-07221a352ebd\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:29:26.019751+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDk2NjAxOTc1MTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\",\n    \"encrypted\": \"5b6d71f892c30136f5e977b6b5bcff45a3cfc6b7b62cb5f588a213f4520ea155a1cb9377d2afe9105af29db1f0a10a4618423573b8101c3d33b00366fd3749efb054b242f3d39b46893c184c5e402954dae2ffca02d7e03fca56b499ef18b477feb369ef65debd32472c9f4fc50b4bc77afbd8b5cff35b6763febc2579473ad408527a5d6ec2b14e3a751da39fe7368a14e3acd75d22d97f594c783083cda304082de1dfb4a695e3690eed325cd0bb15db8ce75571d3fcd27b4fd7f158f5b4668b8d3ddeb8a66be87e8c46e6499ba9363ff2ac01583f318b487c89b358edafe6556222f65d347c8972af2dfe270f07bcc8358dcb697571226e9ad83efeccc3e7973070a9a3ddb8650519fb86c282ef00f8745976e6cc16d79738555ddce722caa6aee1fc3d0dd19efd2effdff7bab9a8bae2475d18f2d9582f9dea059d381b55317f4d6bc5005aa417d02e251e2757bd70a7f854ed67a40df0a097e9e78b9af5b5cb199af774eb1cd2774673020fafb236eaeb30599c2754f20f38e675cb8b9732e583e2d8ab6cb7d4488172f6b2fcc14a907294063d8ed1dd26898aef29b7ca5d9bc24ba6e9234052e261882eb1d2d5b3d31c66b620d79c2dde3e32313b4552342683e70afd90894042fe70bcff323f46f97f9d592538df46cdeb5b50f1eae9b6bc2576f3e22c68dffb7e863c22fd662e2c0dbff3cf44a9310045b00990de3726e40962e7cac0ccc399e0e64e2b702a3545eb8411cd676feb7afe752ae0ba78ed409dd1df5beded841294ea6113f86b5dd359e1620f8679966946a77ac711bf35265cdebee60be13a21321ce43ed7d0eff931af7eb1732fb75b322abd3f2df7398ddc8dfff01de5d4bdf62647462da5a3ad4cf9af7ebf31d69d6e3dc3d85e824b8011c4e207de09322a8db8eb0bca1b53d30f15cf4ef344c36f2967c5e0cd90a73ef46eccb20f584bfb19774589d59ffca46a5f1d69b7ab109bc316a88c73a9da05b56503e0cdeefc02f7b139d461e2c81ca55aea250f1168b694e78d37bb9b9c6b68fab6115f3ca617694dee74595492bad474703aa8be953e455c83ed68c3b92fca5a5bd181da0a091cea2ce27d9533b4d96ff3c8f40ab55792816646bb0a8d556e83a1e2388ea723982d6ab3390baccd02c4bfce2dc8656a17b01fa378e572c788a813863b3e196a41fd050da0d6a47927364c5e7e284332bcc37fe4b230bc44f76f91f3ad77bcf313e99a574ceb5fd102439563db46c1acfb775b1e9be5d88ae1cc4892199e28e6402fe92a7921e6b477defc9ae14716dd2b8459818ae14610eb5ef8c7303d258a2938cc9791cddbc7b93a908fd21609eba6d802675f72f08a54654f412a8175ee5165fb5c23b96662536b729a64f68a923bf977908c33e5360382e756ed98bb6f06787908d1e6dcaee494ce8dd6e3df7315b048ddd5884f0f5367c6f7a10d5e46ba1bb0250262b6bf293b6ede33e8751ee205b743e101d2310cfb01d73eacf11052424dc958bde0fe5a94ba7668362c6ffbbff630fbc233a752df6ea96aca260c53d5379b6618a093c6856f24af4140e031488123da6c367d3b521571170b219d41b24efff21faf4e52a8dbeabed220cdbcca8e691668aff0dd1222815e631bb8fc3b418ea1ef0bbba20318de951d41ed55965b51e3df8a1bea84c189\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"18070006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Impacted cerumen\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"d6a67660-cd57-4efa-8b1e-07221a352ebd\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:29:26.019751+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MDk2NjAxOTc1MTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Telinga Kiri",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"18070006\",\n        \"display\": \"Impacted cerumen\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kiri",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"18070006\",\n        \"display\": \"Impacted cerumen\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2MjA5MTcwMDY2ODAwMA\""
+										},
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 04:48:11 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/b6c94d43-499c-4170-a80f-fa0743c6b480/_history/MTcwNDg2MjA5MTcwMDY2ODAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:48:11 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "5855"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "f641f587-2943-4c5a-a231-9feecc95cb82"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"89644007\",\n                \"display\": \"Left ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"18070006\",\n                \"display\": \"Impacted cerumen\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"b6c94d43-499c-4170-a80f-fa0743c6b480\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T04:48:11.700668+00:00\",\n        \"versionId\": \"MTcwNDg2MjA5MTcwMDY2ODAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueBoolean\": true,\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"18070006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Impacted cerumen\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"b6c94d43-499c-4170-a80f-fa0743c6b480\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:48:11.700668+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MjA5MTcwMDY2ODAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":true}\\\"\",\n    \"encrypted\": \"45b4f066b15ebe1345241919aaecfc1acc50367674c4fb146803c0e9c238af30883e83871b2d2a882ac2fcf0f605464dbf8fe1cc6fb54d49e584a7cb5cd0ff00e6967cc12ddc1395d5a9ce6fd5f4f1c948b726e567b870a0db7ae4aa7c50660d25ebceaa805ae11381e1816758a918dc8c17cae9e1f3ecd57cfbf5fde7f640609487552ef7199b262c732a7d5b09cd545a2416d9a93af47dc01a73d7b0ca528c0f6a918dbf661ca913d92d4fccab5457d08d0c2467941413bcc48f12d7c095250f9311037d5b5927a44404727fd557183377cc6d47bee3312dbc9946f6126776e719fbe5d82988c65b05bd313618bcf6e6da3dc602f1ef0561ac6ba98b1da71614a63d476b3bbf1d7ccc8e1977b994488f4df7949f0bab3b73e340ff9bfa44ae838b745537e0a86212c06f517fd1baf5edd0313b18b76d91c958576f69af45876eb0a7a5b2a387bcd56abb900549604adfc3587a179c186c6ccafd8b5b64d16143283cffde1c49a1c3b948f004527673bf5df4a6a59238cb967cadccd35dffd6312fcdcc9456552a83537aa6e136713528826af7cc39db591412f26fde59208318640a0f73dd1e1b5f07a64c1c76d86f0fec18ee85e0c3bec395d78c3f7ec895a0ffba3ce2208b92f1984dfa6fbf671796b124c6ee5f6576f2227457c179aa7a003a3f329e2a303a71d5747b5169a4ff1aef76129f1235cdb2c9262dd729d5ab6902cc4e7d95d9bb823c5e5b1964adf60ed182cf614c7f5bd21c1b5948e96d71d44d57560774cf83b4dcd4cb2812492524c1a479499d2d67e2285c35e58a54d811684647719bb2ad73dd16def48c8594b05483405c5fbb871d36cbb11616d5992eb43aa63f37756ed80e07a2d71190783fbca35c64cde60d9e53328b67ec16d0f83fd8e4b5c1606c5d7e41164c7e2f2209fd9be14194c1d5c9f61cc89a6bb72fadfc8c994308c2919354c35a8f51564ccb7b53d197ca995ede75ae7f31ac2e255bff47509a0578b4d1229771e704a2a506b99d46b6f78f37cc638fc081b6be6dec1c30880b1f208db1a9851a57112dd0ab4222f5f9f199840c4e2e42d2bd3e2dadb621e1815d355257380439d6f181a893d79e5c77aa4187d0ef783aaeea6a91dfc507d2463aee2650657a65936a02402f213acb800fb5419773a3c0977b59b35f9f6a8535c9f3435b0634ca840dc1cc9a0b2aae570ef64cda1b7d0e432cee65b00a96a7dbbcc7a09f35a8d1368a14a23d1605344afb373dbee34058fcd032bf40ae03a6de014a9cc865f6724739572c29ebcbdf3ad26b0d93135059dcf38fbf72ca45c1ebb394bb433735dd77aeb1a6af20a97de5ad990c883ef31c0a10c326dc14ff9c04175c9c4ca1d8184d7ea752715ac4036a17442532d7bac6e97cd52a8d2d4b47b836c0b508f63617c217a94651e2b630b4c0b26a1a2f6075e2548705d19c0377720c8eb5f07ca1cb452a54abf32ca6379e7d53f822150be0f507c6625f32eb2e8a4513f512349953f016e82674448dc1e649c0c1265d8676e94582c3b8c475ed4adfee94f36370aff46640cc33192d75e7f8d9ac79b9ff37ec53971ef332145c42238ce3d8da763c2fa73d48a1bd34cdc529165d1826c0de3539043bf8c5b82cf38b62ce52876706c893f19a9194e52d41f108aac056f23bc527322903bc6d54\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"18070006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Impacted cerumen\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"b6c94d43-499c-4170-a80f-fa0743c6b480\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:48:11.700668+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MjA5MTcwMDY2ODAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":true}\\\"\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Curiga Presbikusis (Tuli karena usia lanjut) mengguakan garputala",
+					"item": [
+						{
+							"name": "Observation - Telinga Kanan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OC000151\",\n      //   \"display\": \"Curiga Presbikusis menggunakan tes garputala\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"41769001\",\n        \"display\": \"Disease suspected\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"49526009\",\n        \"display\": \"Presbycusis\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kanan (Code not found)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n        \"code\": \"OC000151\",\n        \"display\": \"Curiga Presbikusis menggunakan tes garputala\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "62008e76-c64f-433c-81a6-d9cdf0a70ad0"
+										},
+										{
+											"key": "content-length",
+											"value": "289"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:49:50 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resourceType\": \"OperationOutcome\",\n    \"text\": {\n        \"status\": \"generated\"\n    },\n    \"issue\": [\n        {\n            \"severity\": \"error\",\n            \"code\": \"value\",\n            \"details\": {\n                \"text\": \"Code not found: 'OC000151' in system: http://terminology.kemkes.go.id/CodeSystem/clinical-term (RuleNumber: 10010)\"\n            },\n            \"expression\": [\n                \"Observation.code[0].code\"\n            ]\n        }\n    ]\n}"
+								},
+								{
+									"name": "Observation - Telinga Kanan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OC000151\",\n      //   \"display\": \"Curiga Presbikusis menggunakan tes garputala\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"41769001\",\n        \"display\": \"Disease suspected\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"49526009\",\n        \"display\": \"Presbycusis\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 04:55:29 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/26fad1eb-2834-4d09-bbc6-5c834f861503/_history/MTcwNDg2MjUyOTMxMDc1MDAwMA"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2MjUyOTMxMDc1MDAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:55:29 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "6356"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "0812efe3-005d-4153-86a3-596fae2d9579"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"25577004\",\n                \"display\": \"Right ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"41769001\",\n                \"display\": \"Disease suspected\",\n                \"system\": \"http://snomed.info/sct\"\n            },\n            {\n                \"code\": \"49526009\",\n                \"display\": \"Presbycusis\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"26fad1eb-2834-4d09-bbc6-5c834f861503\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T04:55:29.310750+00:00\",\n        \"versionId\": \"MTcwNDg2MjUyOTMxMDc1MDAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueBoolean\": false,\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"41769001\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Disease suspected\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"},{\\\\\\\"code\\\\\\\":\\\\\\\"49526009\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Presbycusis\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"26fad1eb-2834-4d09-bbc6-5c834f861503\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:55:29.310750+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MjUyOTMxMDc1MDAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\",\n    \"encrypted\": \"85fdef64fa8bb30c1ff6687f55b87ca34f354b6d051fbcb650e086975fb16df1f3c6e8b3e7a01b81277c212815cf2ae2e4b35959caba46d0bc1f174d872a2183e568a37757f43dfeec35930096c18b4d576e7624edb2849be2b418381ff2026a8a10d2fb9695dddfaf223760532e229ecb0a791ed5cf90785d8ae07a9f4951e1efeb4a1e89f6cd2985e9ab286fa18e2f46815cf9285e3f913165d875d0469bafc7ffccef7c67f51f6bf12dbb4b761faff70c2b5ea66e04969fe81db7c28f366a40c84519f87353312353a1aca7e96a584231acc8c6de77987b02a26e3011ad36d33c18d6553f19b0f3b7f323f0e9b7be6e8cf4f527d160f6796b9c22aded1f78167e21f1db8bc12213ae72dd1ab8178b738699b8757d5f11ac88ea97a01aceb905ce602cb79621f19887a1f447b3768e4556c903f807863b3e58d1f9504ba6ef7a1c26f46113feb556bfcbb71cede98c4edb19a58a5ffaeb13c1e5a62c3e3a589dd00ee56de916f6b02883c42d78a906c1641ca530fe82e508df2b8b9d53ba0d361119612d366985e48b5e40bd6b3aa27d5fde95bba95f1663675d7126339089d21fd5baf92eacfaba06c283cc3a957796b201e3c8b9217ef3cfa71a6b615062d0a867fda7fb8a5abeea002208ea5055d497d0ec645e6f088bf1a6c75080d60b14a90b9e96de3c732ebfd8427422dd08c6d55018d0915b738fc45accd6ae59c3baa6f840d14a6f228f294874d086cc560d315e9589b5e09e2632762c440b950207b9b84f08a215ea562f6760fbe507fe3f6a92bc255c45290313d41c82bbc55d8ab84864dd1a69f1ee476cb90c61ae0af5bb7d804920b9eeb68b4b12b61366891da939b97441614825ea2a3c144df7b700630d675555aede803e099a91ff7f09c781ca8a17687fcc0c0f052a3bf817c98d4a330923abe9598e2d3da322acbb292ad6b1590af181aa8875e26555e3397b89940f746965a9909a3b30fa2fbf91d2c31d04d19b6a54bd6082a42e3bfc62feb427ddf4dfa208c7dd19e2aefd3a710055cf0b3b2c81e2f27fd309d7967c7e30e1fffa83cb95beb75f010fd8c5a9127df371e71c3c35770d7f042cf6da98904d3bf61b5071efbd42416a653f707a3d55d7c008933d3d847d4151f3c7bdca816df54bac85e0395b004eed3c67a19d7ce6214ade5503fcfcf1aa6853fc0692c67a5d11c640a2250f0995ab53bb784352f723a14c57bf2b5e7be4ddab10fe5dfbb1b7efe6c06007a9ccb17e9255bea8e88868829b2070f0d3fe4da3f50c6e8012a327635ff116ba92a2d757eb0867e947d6c9d19446986695c118941b8968f292c7d8962bf0153a82504edac2b04efe0e95e49feb0aff9644778cfab62211c970c165464391855a6713f5925f5174ed2d52d0df05346cf938a27e6971f7d40670b4610ab4278241f6b27bee988baba5cb3b6272e3af82b6868402875646b005fcd458d48ec94f2b916c9c1263d537e3ebbcb726490e6cb57a5fc567fbd7e7cde03430657841d4ec247b2121947e452145e94e9db4b80bd5ff515a5f088bcc647ee3f4a3032a662e92ff183e95546d5453c9a113322ce356e4e6f00f63c08dd9733e3536f6095dbb73db5a4b1aaa610168f317367a203e8dc87a6aae5ae7047f909b97354495d98010dcab9952db3ea49829362c30fe392c8d9370cc94617687ab0c77700bf4bf76dfd4eb4ee24c80a065ffc33cb08be8513c61acf62bd654e95aa5a4534eb6e46e10f976ce666e15209378c3103a47f058822761387efb113d40784615d9e9e20f0bfd9212e579d6bebd6ff9\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"41769001\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Disease suspected\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"},{\\\\\\\"code\\\\\\\":\\\\\\\"49526009\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Presbycusis\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"26fad1eb-2834-4d09-bbc6-5c834f861503\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:55:29.310750+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MjUyOTMxMDc1MDAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":false}\\\"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Telinga Kiri",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OC000151\",\n      //   \"display\": \"Curiga Presbikusis menggunakan tes garputala\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"41769001\",\n        \"display\": \"Disease suspected\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"49526009\",\n        \"display\": \"Presbycusis\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kiri",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://terminology.kemkes.go.id/CodeSystem/clinical-term\",\n      //   \"code\": \"OC000151\",\n      //   \"display\": \"Curiga Presbikusis menggunakan tes garputala\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"41769001\",\n        \"display\": \"Disease suspected\"\n      },\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"49526009\",\n        \"display\": \"Presbycusis\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueBoolean\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 04:56:03 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2MjU2MzQyNTE3NTAwMA\""
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/9b3d928a-0b8a-417b-ad69-803dd77337d0/_history/MTcwNDg2MjU2MzQyNTE3NTAwMA"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:56:03 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "6346"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "b144a388-5e5f-4aad-ae89-f2c47c1dbb29"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"89644007\",\n                \"display\": \"Left ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"41769001\",\n                \"display\": \"Disease suspected\",\n                \"system\": \"http://snomed.info/sct\"\n            },\n            {\n                \"code\": \"49526009\",\n                \"display\": \"Presbycusis\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"9b3d928a-0b8a-417b-ad69-803dd77337d0\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T04:56:03.425175+00:00\",\n        \"versionId\": \"MTcwNDg2MjU2MzQyNTE3NTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueBoolean\": true,\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"41769001\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Disease suspected\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"},{\\\\\\\"code\\\\\\\":\\\\\\\"49526009\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Presbycusis\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"9b3d928a-0b8a-417b-ad69-803dd77337d0\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:56:03.425175+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MjU2MzQyNTE3NTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":true}\\\"\",\n    \"encrypted\": \"b29fc77c4266740bfca55fa1c29a493c07d5e534a4d868dde6fe032583fac90449e6051944f882a6b522fac5150f1827e80f613303669c89ad8f46e79d102a7e852873568d3265ac27345d4ddd93c1f5f680db03f2f2c3133086d71d2965650b118db95f802756b294816307d154cc72db2b7c91e60b2012ff8989ceb263a05a67e30dec1a933e42470ae63be2bf1bcac3158697e5ee3452cc8b5fb2d6ecabbdbaf57d53b3356d8db1998535dd724ef82477815b9c805b2a328f96182c8dda86f147907e52c1ee6948cef4c3697cef1ee2975ac67324f71ae06e952e14169f0a4bc247dd462ffc6fa4b7397cad6b6b9966e2d4acae2515a88b55c0cf5035978f44a57d858d9718459cef741ba961e95eea67d63d139ee6d4daf9ad0dd615f4a8b7b6a67b43013c6b480bb2417c8e59e810743c89c182fe8b0e2c6906269a523275fb49912d3d317c356c4fefcd58fbfd236a7b1c793f08e0537b082bfad7cb5115f97da97c97da1a5f6bbc364fbceee70fad48c12eebe06436a9fd57f0a8c2a50481e6dc2c213329fe22d6177f8b8ed26e9ca1239f06da2a6fae85a5d60b427309997f70230e7a2013ac763ceecf8870194ea48229c2232a98e43dfc94fe78a5798f6e6e47abb6105fe4490f5566fa3447d5be5114a565c14a8a51ed9f38720647a31735717b297631bd734fe180519a3166a896a7f9a0baaa032a4a67b6214d8ef7dc664c93885815ff41d9103369d456df85a62e70cd6bcb1d9effad02948ba76729d227523ef83b83d724a3ff1236ef7eb6242442412dd75c5c4ff664f45ea4ff345f72916e55d11875139d08f733e7a25fa1fea1ab81587b5269d7b97f3c7a10d60863687c648a26a09392ad54736f3f3333ec81aedc3ebdd497330acbc65db0e6e1db85e754e689e1613cfd0d3d250835b14e9560f38e00a05a9f00e293fd5d27e5328246a5f896b8abefd974df70e97249d336d0eb99c35007d9729c587c6ed949475837786d8c4392c18aa0f8b466525073d80be2fb2cec4a74e738d6367ae8a6c8d648c81afb9dfc90ed394f7d57fde14325bb9cad37811abca460126ad7a1ed151c7b0fc1ecc73ac22123bc3888e96dd8ce01d1b9cba727a271dd8d5481b67edb6b69487b9e306890fdb8735c5d902abb29f7e18ce4a67b2cd1fbc9df882ee19b6de5aa1b48c41e3676c0092f1f3f358ce16238b86132a12798ba1613586d25549cae8c740ca0edaa9bfda6aece2713430f4750932d07c9da348eb00b19b0d71319056da7bbd1500927bf3f9c9f1c104629c223a0e3cd3f72ac587fb592dd1925d4f81c5685f66f6043db1f62230bca32f25dafe60647d0ffcc3911c6deed7b5d3cb3e0e89f4dd574a65ff66fc8fa8c9e7f677462fd63e32eea092b3387d2440c41be17f8f4d4d940a29a734a223a60418b1e912ef547198da18600616f65b2d470eb4bbb72466ce179e473a60d429fd646fc4aff2db9c865ab2c4eef125aa17edb23e105494eed15cbd833619ea6722b20755afcc287e764fb2a77bd5a7db93258ddea7c1a1a7420b5d96fb49839b3fdcf1d1500d3d4c4bf129e0e908c081a0261306fcd8d772d990d8b719991fcd87766f36d166a02cd43499a91111910d499d7c8010001bee48ee8b681ab71924871822fef9543cfb99e2914b44b0144f60ebfbe182e64c029b3f468973a6476aa61bff5dc80e01c79004a7b08e40bed0600baa36d64b2a871f8eecc0e895dec08af2e70371ab02e365bba83dd0f262a75217d242e25f4a5be92e8bb100a754ba4098675756aeac46cb95d1d\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"41769001\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Disease suspected\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"},{\\\\\\\"code\\\\\\\":\\\\\\\"49526009\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Presbycusis\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"9b3d928a-0b8a-417b-ad69-803dd77337d0\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:56:03.425175+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MjU2MzQyNTE3NTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueBoolean\\\\\\\":true}\\\"\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Tajam Pendengaran menggunakan tes berbisik",
+					"item": [
+						{
+							"name": "Observation - Telinga Kanan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"247301006\",\n        \"display\": \"Finding of ability to hear whisper\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"275727004\",\n        \"display\": \"Hearing test normal\"\n      }\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"300221005\",\n      //   \"display\": \"Hearing for whisper impaired\"\n      // }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kanan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"247301006\",\n        \"display\": \"Finding of ability to hear whisper\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"25577004\",\n        \"display\": \"Right ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"275727004\",\n        \"display\": \"Hearing test normal\"\n      }\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"300221005\",\n      //   \"display\": \"Hearing for whisper impaired\"\n      // }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 04:59:06 UTC"
+										},
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/4ced4712-a187-46cb-afa9-5815e040cb7d/_history/MTcwNDg2Mjc0NjA1MDgwOTAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2Mjc0NjA1MDgwOTAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 04:59:06 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "6582"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "18b93e91-b3e7-466f-a5c6-1be749067a48"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"25577004\",\n                \"display\": \"Right ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"247301006\",\n                \"display\": \"Finding of ability to hear whisper\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"4ced4712-a187-46cb-afa9-5815e040cb7d\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T04:59:06.050809+00:00\",\n        \"versionId\": \"MTcwNDg2Mjc0NjA1MDgwOTAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"275727004\",\n                \"display\": \"Hearing test normal\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"247301006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Finding of ability to hear whisper\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"4ced4712-a187-46cb-afa9-5815e040cb7d\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:59:06.050809+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2Mjc0NjA1MDgwOTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueCodeableConcept\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"275727004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Hearing test normal\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}}\\\"\",\n    \"encrypted\": \"5adfc2c580b5455b08d3b6ef051e572329136c108179adcdd04ca1298d92bb0063f7344994c51a0ec39890fe74020062414422d51420f7bc4b6ec9b3c85b58af010ca3dd41cd220ab616c379584938e40170e39bec75460e1e7ed1fdbca8771a679d8ebf89e93985a073b0e2e12d86d5ccdc67ba2f296cf3780d2e887b738b437da301f4c0a05508e7a26e45b6032f00829ccf693b8be976b70d7927904eb42c81d0558da11b9dc7b3014941797c23d1c875035b4841f50519258515bd6da3c0f98dcb254d9f75905881fbe04cf8a8815496f85f91ac4b1547d6e98456564104adc0968994b43b5dba6e14bb1abf9a6008f971ec5d3384a247779ebd7133cbcc7f8ea95004dd54c72e0bd2063dd0de8565704c04ae7ae107a0837cfdbd35deb810bac9bc2c3377721b90efd01d9bb9a0548a0c378273773319f406356801769a09fe984cac047d81616eba9aaf83525618a49b919aa1601a83d448fe77ecc099aa067b70551d75d4a15077abe33b0613c8a76802d84f7bc9c02d941aeba545368f36621110125df4c7a2165b87777bbaa8e8dd3a6c3168ced13157e0d38d23f7526cf75bd9ac5fafa3cd21e79dd7a17d9bf7d66b0cafbef09ab29fb0e05aca262e77ed93477405fceb52dbe14216b0c8fcdf7ccf13da45a2ab3679f87ce5b4c5a783a38e9dd4adba9457aa5893dfefbe7120ad54d024578cd28cdde716d6dbede263c464bf12b6c255927504970156177737bfb55bfa2adfe0dd82343056250c49fdddc57b742d4e34f75d63add1b2d7417ed52c0ddd3e6d46a03cd12a8404a04db8644d420b866755b2509cd3b65010a2a8a359810458dd84b95218c500f40152a9eb8c7277ea4825b937501ee5ddee0aecb667f042c5c7e496173e9f5497a82f3906cb5468eacf172048e1537e671f8dcbc956281c0f896de9982a73e9ae2639b4dd465d468e1c9173052a6e22c7f6097a28387de6987617dc42fe1c57734fc00255f662d68c6b9d229b2386b118c950d92dc4af0892a01d8f5998b4922b4c6598c8055ccc0bb6a949198e57bc2d758e1c2dbc0ab35e9c3f2985ce4f5811f8215393560aa3a8cb79c919f23f166ebcc3bc575e90aa896cba68d7ee54d568571c83e684fdbefcc6a247826ba9ad214cfa8b30fe2afbe6c33eb055a1e74e7d693c24aeddc997dbedcae0875da991c648a0ce9b35aa18844e0e2490256d81117f86ccddc3dd034a2ea75c3869a8fb860e7b86aca36894f87cb124e8b17ff83147ac196b8bb8385d8559dfc06d58453783498c9f14487d7e843e4b9b1fd1631b022b0d54e62ebe734bf867926488dba331ccfbc31a86709c16dffde490de792b33cf6dc7c4c0401c4c78b1cd7cd5873fe97bc898167f5dea12af16dfc45abea2bfaeb111cd56f55e64ca7ac75c9258edddaedeba3bc55f4556695da6d06c952048cdf7c311a69d2f67d53bb02aa511f018a20697b540da08375da6a1e0b145e8c3798af7b2b53426d8c54a8ca85eb5923972cf50e60734798cb62ba865a2a37eb542784c6dc9ef78e3978f716b6aeef595f635f06df174fe4b475b5320d9b20c7f5b39329e8a64ebce10408f00f726415fd43b9eb4befd2d45c23f61e78b5de616b72f2f3ea746263e262db94784f6bf58e98a67259163d4b93af369b451328398523c9b70ac11594fd79362f1486ae07fbaa712d568de0c323c889a013599e72e82eb2c84b413dc06be779bc381ee528f033d8c4232ababcd98e54815322d539567f4c381c909056e71cbd2465ec0c65889bdf25df1e953595d0598935263870d51626b241bef0d9ae0559f27f52f7506dd36d77fc313ede61257ee1488c02b19be3e303cf6f103560a93184d42\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"25577004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Right ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"247301006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Finding of ability to hear whisper\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"4ced4712-a187-46cb-afa9-5815e040cb7d\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T04:59:06.050809+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2Mjc0NjA1MDgwOTAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueCodeableConcept\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"275727004\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Hearing test normal\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}}\\\"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Observation - Telinga Kiri",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"247301006\",\n        \"display\": \"Finding of ability to hear whisper\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"275727004\",\n      //   \"display\": \"Hearing test normal\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"300221005\",\n        \"display\": \"Hearing for whisper impaired\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Observation",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Observation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Observation - Telinga Kiri",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"resourceType\": \"Observation\",\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"exam\",\n          \"display\": \"Exam\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"247301006\",\n        \"display\": \"Finding of ability to hear whisper\"\n      }\n    ]\n  },\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"89644007\",\n        \"display\": \"Left ear structure\"\n      }\n    ]\n  },\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/N10000001\"\n    }\n  ],\n  \"subject\": {\n    \"reference\": \"Patient/100000030015\",\n    \"display\": \"Diana Smith\"\n  },\n  \"encounter\": {\n    \"reference\": \"Encounter/{{Encounter_UUID}}\"\n  },\n  \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n  \"issued\": \"2024-01-08T00:00:00+00:00\",\n  \"valueCodeableConcept\": {\n    \"coding\": [\n      // Select one OR multiple with some logic\n      // {\n      //   \"system\": \"http://snomed.info/sct\",\n      //   \"code\": \"275727004\",\n      //   \"display\": \"Hearing test normal\"\n      // }\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"300221005\",\n        \"display\": \"Hearing for whisper impaired\"\n      }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/Observation",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"Observation"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "location",
+											"value": "https://healthcare.googleapis.com/v1/projects/dto-ihs-dev/locations/asia-southeast2/datasets/dev/fhirStores/fhir-v4-dev-ver2/fhir/Observation/bc25ece7-332a-47c8-a70d-b33be212574c/_history/MTcwNDg2MjgzMTM0MzMwNzAwMA"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "last-modified",
+											"value": "Wed, 10 Jan 2024 05:00:31 UTC"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"MTcwNDg2MjgzMTM0MzMwNzAwMA\""
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "vary",
+											"value": "Referer"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 10 Jan 2024 05:00:31 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "6622"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-request-id",
+											"value": "6320b39c-c354-43eb-a7da-fdfe998c3b5b"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self' http: https: data: blob: 'unsafe-inline'"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"bodySite\": {\n        \"coding\": [\n            {\n                \"code\": \"89644007\",\n                \"display\": \"Left ear structure\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"category\": [\n        {\n            \"coding\": [\n                {\n                    \"code\": \"exam\",\n                    \"display\": \"Exam\",\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\"\n                }\n            ]\n        }\n    ],\n    \"code\": {\n        \"coding\": [\n            {\n                \"code\": \"247301006\",\n                \"display\": \"Finding of ability to hear whisper\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"effectiveDateTime\": \"2024-01-08T00:00:00+00:00\",\n    \"encounter\": {\n        \"reference\": \"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\"\n    },\n    \"id\": \"bc25ece7-332a-47c8-a70d-b33be212574c\",\n    \"identifier\": [\n        {\n            \"system\": \"http://sys-ids.kemkes.go.id/creator\",\n            \"value\": \"10000004\"\n        }\n    ],\n    \"issued\": \"2024-01-08T00:00:00+00:00\",\n    \"meta\": {\n        \"lastUpdated\": \"2024-01-10T05:00:31.343307+00:00\",\n        \"versionId\": \"MTcwNDg2MjgzMTM0MzMwNzAwMA\"\n    },\n    \"performer\": [\n        {\n            \"reference\": \"Practitioner/N10000001\"\n        }\n    ],\n    \"resourceType\": \"Observation\",\n    \"status\": \"final\",\n    \"subject\": {\n        \"display\": \"Diana Smith\",\n        \"reference\": \"Patient/100000030015\"\n    },\n    \"valueCodeableConcept\": {\n        \"coding\": [\n            {\n                \"code\": \"300221005\",\n                \"display\": \"Hearing for whisper impaired\",\n                \"system\": \"http://snomed.info/sct\"\n            }\n        ]\n    },\n    \"plaintext\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"247301006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Finding of ability to hear whisper\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"bc25ece7-332a-47c8-a70d-b33be212574c\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T05:00:31.343307+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MjgzMTM0MzMwNzAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueCodeableConcept\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"300221005\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Hearing for whisper impaired\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}}\\\"\",\n    \"encrypted\": \"f6964cf2944eb63eb1028bc2f168ae608a5945d34a6bfbd1c41bfcc5bd52aea96ba3603b27790c2861e46c606069187eb15ab5ad60fca29ac4b073218fd12a58f9b5e1e4244a877b380a1809a21d4bf81d07ded08509d40f5eed38a49220109e2c5eb18823668f1b287fa38fdbd8595ba27139ded9f34c97db3d2354d308186b2d831d09a08ed70cc0e01006e28e4b11be4b54861549246255109f87b441dd7ff8095a36422180ab956fe116540a6acf1e0849dc4cd6d7f7c04b46b2e35666baef4d112576f38314d87dcad4eed20d09fccdbad99dfe2444a19b4c98e75b9673282885705f9f13e17ba4345b670c99683b9477415dcbee1862b02dfa7e041882481c1b1e0bb060a5d315a7bc66b392caf2100756a72cea2edb0f887fa23bc9bb550a1dcd61323003de8227e44ec3bff4a3339d16989017a92f3fcbf096cb4ed4442858b7d8979ee33e43aee04510d4b42a3c45e63c6e2e7260d54a90e066e9ca1d8b2dca0ab3fe7a7b52167266898cc79af5a1d99b83e8de32e0e60c05f441c1be2c0e8f2dbcc66fb638f426d1801259eaba5db2bc85ad8cd3a944eec012cbca357066663734da6f4405f79d246ea1b5f185f4f8a8a6b8606d397de6de79cd6a3bea2c402ccfa6f17b8caf79a633a649707fc08c53af7a6309290a6259300c03ea3f56a787513003bd74fc206350b058cbe363b2ba28aa686ca67670ff423dea1a278f041e1cdcad3539cd201af9eced99ee18f0b05969111d434f3ca5e730a2140c4a0e94453a8b77dc5bc2cf50c3df6da08ecc71d3cc0d8bc22f63d91194ad76a48d7918e6448ddf371e94db1d0d7c4cd5650ff3a5b0da3040dee5827f97c43bbdec9c1eaad3847d800a7fb1563900fb708cee738c12ac172973e7bc336344557ddd6134b285645b734d8052fdecc4094004cbdb869ef217bffe6fc77548ef302c461c3b9d1973bb6fe2bcdbe9b47e212cdaa12a1d493f5e6b505931f323cf082fdcdb2fb057f3e3c96b46161a639200d5b741d87f2b4a7902c4b8616b17356c6fd93e7a7f95c880971be8879494e07eb82d14304518075d77a7271f588232e867f242b490584b987c78afc7cd8ad39591fb449e307bdd9d74b6b97604f330abc6c8f56f75922d046618d72b6ac6db312a26bdc5b23d12c01df2ff4e05f3dfbd42df7ba34cd583133c656b1a3c0fe17011adb2e3d104c2ecdbf7988956703055d8a023740c303d9343d132257181a50406c0b23580433efbf727e5ee789ffdaf8273de90f5ee3bd3715c363fe27bea7f0152284b11feb595cd6d02e722c88c1f10303a7bf6921dd33eff78ab03de43c32659e588dfc998f92f47b17803fee4fd5739d360edefa00097c676fa56436cd4dddd76b7be0a3e5ef167a16dd034dd9b2203ab03bd5dbfcabdf42fba2adf3847f7bdb6e77df5976ad5fef0005ac4df9ab24810ca69e01a6ca0bd8b34481019bb2cefa9a82dfa886a14599e65f46a5f34c2c92ab2d928c61f022c1e352e2e59bee577a0760a23aaf558cd9fd965671d4e7a82014aa400d1a0db9751105de183b172e3200037896cdb191e317df2585f8dfd679098aada8f67be400aa27d4ad1ebf5e2feabbbb37461a6c888af74b114cd333f90e20bc650aa9dd85cb685d9db3ce124646584eaf426a5547a3afc8170b32571cdf7001af4b8641a02715ecbe2295d8f1661f02e44ec3642f295f511f0f0a8db6eb2ea6655845a20500a7dd12d60f1e4612eb783de02e71d71c69cbf2c94c5448723aea34ab2681c6e39bd5ca44d597f7e2da2887c1ed57b29c64359e7fb78e8dadbcbe46141f8d10c28af1e22b78346ceb1adc2a66dfa1f849d58a0b919407862002a750d350d8d52fdc66d3e8c0660ea9f\",\n    \"decrypted\": \"\\\"{\\\\\\\"bodySite\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"89644007\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Left ear structure\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"category\\\\\\\":[{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"exam\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Exam\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://terminology.hl7.org/CodeSystem/observation-category\\\\\\\"}]}],\\\\\\\"code\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"247301006\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Finding of ability to hear whisper\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]},\\\\\\\"effectiveDateTime\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"encounter\\\\\\\":{\\\\\\\"reference\\\\\\\":\\\\\\\"Encounter/faaaa874-8b89-4d34-b68c-0a457eaf9206\\\\\\\"},\\\\\\\"id\\\\\\\":\\\\\\\"bc25ece7-332a-47c8-a70d-b33be212574c\\\\\\\",\\\\\\\"identifier\\\\\\\":[{\\\\\\\"system\\\\\\\":\\\\\\\"http://sys-ids.kemkes.go.id/creator\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"10000004\\\\\\\"}],\\\\\\\"issued\\\\\\\":\\\\\\\"2024-01-08T00:00:00+00:00\\\\\\\",\\\\\\\"meta\\\\\\\":{\\\\\\\"lastUpdated\\\\\\\":\\\\\\\"2024-01-10T05:00:31.343307+00:00\\\\\\\",\\\\\\\"versionId\\\\\\\":\\\\\\\"MTcwNDg2MjgzMTM0MzMwNzAwMA\\\\\\\"},\\\\\\\"performer\\\\\\\":[{\\\\\\\"reference\\\\\\\":\\\\\\\"Practitioner/N10000001\\\\\\\"}],\\\\\\\"resourceType\\\\\\\":\\\\\\\"Observation\\\\\\\",\\\\\\\"status\\\\\\\":\\\\\\\"final\\\\\\\",\\\\\\\"subject\\\\\\\":{\\\\\\\"display\\\\\\\":\\\\\\\"Diana Smith\\\\\\\",\\\\\\\"reference\\\\\\\":\\\\\\\"Patient/100000030015\\\\\\\"},\\\\\\\"valueCodeableConcept\\\\\\\":{\\\\\\\"coding\\\\\\\":[{\\\\\\\"code\\\\\\\":\\\\\\\"300221005\\\\\\\",\\\\\\\"display\\\\\\\":\\\\\\\"Hearing for whisper impaired\\\\\\\",\\\\\\\"system\\\\\\\":\\\\\\\"http://snomed.info/sct\\\\\\\"}]}}\\\"\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"auth": {
